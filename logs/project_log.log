@@ -1,0 +1,25 @@
+2025-05-05 08:39:05.926 | INFO     | __main__:main:59 - Starting data preparation...
+2025-05-05 08:39:05.926 | ERROR    | __main__:main:65 - Raw data directory is empty. Please add data files.
+2025-05-05 08:39:51.945 | INFO     | __main__:main:59 - Starting data preparation...
+2025-05-05 08:39:51.960 | ERROR    | __main__:main:65 - Raw data directory is empty. Please add raw data files to the data/raw folder.
+2025-05-05 08:40:16.182 | INFO     | __main__:main:59 - Starting data preparation...
+2025-05-05 08:40:16.182 | ERROR    | __main__:main:65 - The data/raw folder is empty. Please add raw data files to the data/raw folder.
+2025-05-05 08:40:29.693 | INFO     | __main__:main:59 - Starting data preparation...
+2025-05-05 08:40:29.693 | ERROR    | __main__:main:65 - The data/raw folder is empty. Please add raw data files to the data/raw directory.2025-05-18 22:59:13.603 | INFO     | __main__:main:69 - Starting data preparation...
+2025-05-18 22:59:13.603 | ERROR    | __main__:main:75 - The data/raw folder is empty. Please add raw data files to the data/raw directory.
+2025-05-18 23:31:23.442 | INFO     | __main__:main:69 - Starting data preparation...
+2025-05-18 23:31:23.442 | ERROR    | __main__:main:75 - The data/raw folder is empty. Please add raw data files to the data/raw directory.
+2025-05-18 23:32:58.981 | INFO     | __main__:main:69 - Starting data preparation...
+2025-05-18 23:32:58.982 | INFO     | __main__:read_raw_data:43 - READING: C:\smart-sales-kamana\data\raw\customers_data.csv.
+2025-05-18 23:32:58.992 | INFO     | __main__:process_data:58 - Processing data for customers_data.csv.
+2025-05-18 23:32:58.993 | INFO     | __main__:process_data:59 - Data shape (ct of rows, ct of columns): (201, 4).
+2025-05-18 23:32:58.994 | INFO     | __main__:process_data:60 - Data columns: ['CustomerID', 'Name', 'Region', 'JoinDate'].
+2025-05-18 23:32:58.995 | INFO     | __main__:read_raw_data:43 - READING: C:\smart-sales-kamana\data\raw\products_data.csv.
+2025-05-18 23:32:58.998 | INFO     | __main__:process_data:58 - Processing data for products_data.csv.
+2025-05-18 23:32:58.999 | INFO     | __main__:process_data:59 - Data shape (ct of rows, ct of columns): (100, 4).
+2025-05-18 23:32:58.999 | INFO     | __main__:process_data:60 - Data columns: ['ProductID', 'ProductName', 'Category', 'UnitPrice'].
+2025-05-18 23:32:59.000 | INFO     | __main__:read_raw_data:43 - READING: C:\smart-sales-kamana\data\raw\sales_data.csv.
+2025-05-18 23:32:59.006 | INFO     | __main__:process_data:58 - Processing data for sales_data.csv.
+2025-05-18 23:32:59.007 | INFO     | __main__:process_data:59 - Data shape (ct of rows, ct of columns): (2001, 7).
+2025-05-18 23:32:59.008 | INFO     | __main__:process_data:60 - Data columns: ['TransactionID', 'SaleDate', 'CustomerID', 'ProductID', 'StoreID', 'CampaignID', 'SaleAmount'].
+2025-05-18 23:32:59.009 | INFO     | __main__:main:84 - Data preparation complete.
