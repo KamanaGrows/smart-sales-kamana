@@ -9,7 +9,7 @@ ProductID,ProductName,Category,UnitPrice,ProductSKU,Condition
 2007,Clothing-Over,Electronics,583.39,10218,Used
 2008,Electronics-Skin,Home,66.59,10219,New
 2009,Office-Raise,Clothing,66.31,10220,New
-2010,Electronics-Themselves,Clothing,77.84,10221,Used
+2010,Electronics-Themselves,Clothing,77.84,,Used
 2011,Electronics-Religious,Clothing,409.74,10222,Used
 2012,Clothing-Artist,Electronics,623.19,10223,New
 2013,Office-Cultural,Home,935.36,10224,Used
@@ -24,7 +24,7 @@ ProductID,ProductName,Category,UnitPrice,ProductSKU,Condition
 2022,Home-Economy,Electronics,671.18,10233,Used
 2023,Home-Yeah,Electronics,939.54,10234,New
 2024,Clothing-Paper,Home,124.27,10235,Used
-2025,Electronics-Assume,Clothing,279.62,10236,Used
+2025,Electronics-Assume,Clothing,279.62,0,Used
 2026,Clothing-Use,Home,211.56,10237,New
 2027,Home-Purpose,Office,258.61,10238,New
 2028,Electronics-Take,Electronics,637.94,10239,Used
@@ -33,13 +33,13 @@ ProductID,ProductName,Category,UnitPrice,ProductSKU,Condition
 2031,Office-Develop,Office,565.3,10242,Used
 2032,Electronics-There,Electronics,945.6,10243,New
 2033,Clothing-Argue,Electronics,836.25,10244,Used
-2034,Clothing-Feel,Office,136.17,10245,Used
+2034,Clothing-Feel,Office,136.17,10245,Ued
 2035,Home-According,Home,899.99,10246,New
 2036,Electronics-Candidate,Home,217.98,10247,New
 2037,Clothing-Meeting,Electronics,360.14,10248,Used
 2038,Office-Soon,Clothing,926.51,10249,Used
 2039,Clothing-Need,Clothing,976.44,10250,New
-2040,Clothing-Determine,Office,34.54,10251,Used
+2040,Clothing-Determine,Office,34.54,,Used
 2041,Home-Assume,Office,804.21,10252,New
 2042,Clothing-Lawyer,Home,167.61,10253,Used
 2043,Electronics-Practice,Office,873.45,10254,Used
@@ -50,7 +50,7 @@ ProductID,ProductName,Category,UnitPrice,ProductSKU,Condition
 2048,Electronics-Candidate,Home,357.63,10259,New
 2049,Office-Easy,Home,939.84,10260,Used
 2050,Electronics-Young,Home,186.78,10261,New
-2051,Home-Century,Electronics,117.32,10262,Used
+2051,Home-Century,Electronics,117.32,101011111111262,Used
 2052,Office-Year,Home,731.26,10263,Used
 2053,Home-Ground,Office,610.15,10264,New
 2054,Electronics-Above,Office,900.51,10265,New
@@ -87,7 +87,7 @@ ProductID,ProductName,Category,UnitPrice,ProductSKU,Condition
 2085,Electronics-Officer,Home,242.15,10296,New
 2086,Home-Of,Home,894.1,10297,Used
 2087,Electronics-Rather,Clothing,159.32,10298,New
-2088,Office-Evening,Clothing,709.35,10299,Used
+2088,Office-Evening,Clothing,709.35,10299,
 2089,Electronics-Action,Office,413.52,10300,Used
 2090,Office-Staff,Office,71.64,10301,New
 2091,Office-Mrs,Office,905.79,10302,New
