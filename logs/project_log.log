@@ -2637,3 +2637,822 @@ dtype: int64
 4   5   Bob   57
 6   6   Kai   47
 7   7   Sai   31
+2025-05-26 01:45:18.481 | INFO     | tests.test_data_scrubber:test_drop_column:27 - DataFrame after dropping columns ['Name']:
+   ID  Age
+0   1   20
+1   2   27
+2   3   44
+3   4   30
+4   5   57
+5   5   57
+6   6   47
+7   7   31
+2025-05-26 01:45:18.484 | INFO     | tests.test_data_scrubber:test_filter_column_outliers:33 - DataFrame after filtering outliers in 'Age':
+   ID  Name  Age
+0   1   Ram   20
+1   2   Tom   27
+2   3  Jose   44
+3   4   Sam   30
+6   6   Kai   47
+7   7   Sai   31
+2025-05-26 01:45:18.489 | INFO     | tests.test_data_scrubber:test_remove_duplicate_records:39 - DataFrame after removing duplicates:
+   ID  Name  Age
+0   1   Ram   20
+1   2   Tom   27
+2   3  Jose   44
+3   4   Sam   30
+4   5   Bob   57
+6   6   Kai   47
+7   7   Sai   31
+2025-05-26 01:52:59.964 | INFO     | __main__:main:191 - ==================================
+2025-05-26 01:52:59.964 | INFO     | __main__:main:192 - STARTING prepare_customers_data.py
+2025-05-26 01:52:59.964 | INFO     | __main__:main:193 - ==================================
+2025-05-26 01:52:59.965 | INFO     | __main__:main:195 - Root         : C:\smart-sales-kamana
+2025-05-26 01:52:59.965 | INFO     | __main__:main:196 - data/raw     : C:\smart-sales-kamana\data\raw
+2025-05-26 01:52:59.965 | INFO     | __main__:main:197 - data/prepared: C:\smart-sales-kamana\data\prepared
+2025-05-26 01:52:59.965 | INFO     | __main__:main:198 - scripts      : C:\smart-sales-kamana\scripts
+2025-05-26 01:52:59.965 | INFO     | __main__:read_raw_data:58 - READING: C:\smart-sales-kamana\data\raw\customers_data.csv.
+2025-05-26 01:52:59.968 | INFO     | __main__:main:210 - Initial dataframe columns: CustomerID, Name, Region, JoinDate, RewardsPoints, MemberTier
+2025-05-26 01:52:59.968 | INFO     | __main__:main:211 - Initial dataframe shape: (201, 6)
+2025-05-26 01:52:59.969 | INFO     | __main__:remove_duplicates:94 - FUNCTION START: remove_duplicates with dataframe shape=(201, 6)
+2025-05-26 01:52:59.970 | INFO     | __main__:remove_duplicates:105 - Original dataframe shape: (201, 6)
+2025-05-26 01:52:59.970 | INFO     | __main__:remove_duplicates:106 - Deduped  dataframe shape: (201, 6)
+2025-05-26 01:52:59.970 | INFO     | __main__:handle_missing_values:122 - FUNCTION START: handle_missing_values with dataframe shape=(201, 6)
+2025-05-26 01:52:59.971 | INFO     | __main__:handle_missing_values:126 - Total missing values before handling: 5
+2025-05-26 01:52:59.976 | INFO     | __main__:handle_missing_values:150 - Total missing values after handling: 0
+2025-05-26 01:52:59.977 | INFO     | __main__:handle_missing_values:151 - 201 records remaining after handling missing values.
+2025-05-26 01:52:59.977 | INFO     | __main__:remove_outliers:165 - FUNCTION START: remove_outliers with dataframe shape=(201, 6)
+2025-05-26 01:52:59.979 | INFO     | __main__:remove_outliers:173 - Removed 7 outlier rows based on RewardsPoints and MemberTier.
+2025-05-26 01:52:59.981 | INFO     | __main__:remove_outliers:178 - Removed Total 7 outlier rows
+2025-05-26 01:52:59.981 | INFO     | __main__:remove_outliers:179 - 194 records remaining after removing outliers.
+2025-05-26 01:52:59.981 | INFO     | __main__:save_prepared_data:76 - FUNCTION START: save_prepared_data with file_name=customers_prepared.csv, dataframe shape=(194, 6)
+2025-05-26 01:52:59.985 | INFO     | __main__:save_prepared_data:79 - Data saved to C:\smart-sales-kamana\data\prepared\customers_prepared.csv
+2025-05-26 01:52:59.985 | INFO     | __main__:main:234 - ==================================
+2025-05-26 01:52:59.986 | INFO     | __main__:main:235 - Original shape: (201, 6)
+2025-05-26 01:52:59.986 | INFO     | __main__:main:236 - Cleaned shape:  (194, 6)
+2025-05-26 01:52:59.987 | INFO     | __main__:main:237 - ==================================
+2025-05-26 01:52:59.987 | INFO     | __main__:main:238 - FINISHED prepare_customers_data.py
+2025-05-26 01:52:59.987 | INFO     | __main__:main:239 - ==================================
+2025-05-26 01:55:50.776 | INFO     | __main__:main:191 - ==================================
+2025-05-26 01:55:50.777 | INFO     | __main__:main:192 - STARTING prepare_customers_data.py
+2025-05-26 01:55:50.777 | INFO     | __main__:main:193 - ==================================
+2025-05-26 01:55:50.777 | INFO     | __main__:main:195 - Root         : C:\smart-sales-kamana
+2025-05-26 01:55:50.777 | INFO     | __main__:main:196 - data/raw     : C:\smart-sales-kamana\data\raw
+2025-05-26 01:55:50.778 | INFO     | __main__:main:197 - data/prepared: C:\smart-sales-kamana\data\prepared
+2025-05-26 01:55:50.778 | INFO     | __main__:main:198 - scripts      : C:\smart-sales-kamana\scripts
+2025-05-26 01:55:50.778 | INFO     | __main__:read_raw_data:58 - READING: C:\smart-sales-kamana\data\raw\customers_data.csv.
+2025-05-26 01:55:50.781 | INFO     | __main__:main:210 - Initial dataframe columns: CustomerID, Name, Region, JoinDate, RewardsPoints, MemberTier
+2025-05-26 01:55:50.781 | INFO     | __main__:main:211 - Initial dataframe shape: (201, 6)
+2025-05-26 01:55:50.782 | INFO     | __main__:remove_duplicates:94 - FUNCTION START: remove_duplicates with dataframe shape=(201, 6)
+2025-05-26 01:55:50.783 | INFO     | __main__:remove_duplicates:105 - Original dataframe shape: (201, 6)
+2025-05-26 01:55:50.783 | INFO     | __main__:remove_duplicates:106 - Deduped  dataframe shape: (201, 6)
+2025-05-26 01:55:50.784 | INFO     | __main__:handle_missing_values:122 - FUNCTION START: handle_missing_values with dataframe shape=(201, 6)
+2025-05-26 01:55:50.785 | INFO     | __main__:handle_missing_values:126 - Total missing values before handling: 5
+2025-05-26 01:55:50.790 | INFO     | __main__:handle_missing_values:150 - Total missing values after handling: 0
+2025-05-26 01:55:50.791 | INFO     | __main__:handle_missing_values:151 - 201 records remaining after handling missing values.
+2025-05-26 01:55:50.791 | INFO     | __main__:remove_outliers:165 - FUNCTION START: remove_outliers with dataframe shape=(201, 6)
+2025-05-26 01:55:50.793 | INFO     | __main__:remove_outliers:173 - Removed 7 outlier rows based on RewardsPoints and MemberTier.
+2025-05-26 01:55:50.794 | INFO     | __main__:remove_outliers:178 - Removed Total 7 outlier rows
+2025-05-26 01:55:50.795 | INFO     | __main__:remove_outliers:179 - 194 records remaining after removing outliers.
+2025-05-26 01:55:50.795 | INFO     | __main__:save_prepared_data:76 - FUNCTION START: save_prepared_data with file_name=customers_prepared.csv, dataframe shape=(194, 6)
+2025-05-26 01:55:50.798 | INFO     | __main__:save_prepared_data:79 - Data saved to C:\smart-sales-kamana\data\prepared\customers_prepared.csv
+2025-05-26 01:55:50.799 | INFO     | __main__:main:234 - ==================================
+2025-05-26 01:55:50.799 | INFO     | __main__:main:235 - Original shape: (201, 6)
+2025-05-26 01:55:50.800 | INFO     | __main__:main:236 - Cleaned shape:  (194, 6)
+2025-05-26 01:55:50.800 | INFO     | __main__:main:237 - ==================================
+2025-05-26 01:55:50.801 | INFO     | __main__:main:238 - FINISHED prepare_customers_data.py
+2025-05-26 01:55:50.801 | INFO     | __main__:main:239 - ==================================
+2025-05-26 10:35:35.094 | INFO     | __main__:main:177 - ==================================
+2025-05-26 10:35:35.096 | INFO     | __main__:main:178 - STARTING prepare_sales_data.py
+2025-05-26 10:35:35.097 | INFO     | __main__:main:179 - ==================================
+2025-05-26 10:35:35.098 | INFO     | __main__:main:181 - Root         : C:\smart-sales-kamana
+2025-05-26 10:35:35.098 | INFO     | __main__:main:182 - data/raw     : C:\smart-sales-kamana\data\raw
+2025-05-26 10:35:35.099 | INFO     | __main__:main:183 - data/prepared: C:\smart-sales-kamana\data\prepared
+2025-05-26 10:35:35.099 | INFO     | __main__:main:184 - scripts      : C:\smart-sales-kamana\scripts
+2025-05-26 10:35:35.100 | INFO     | __main__:read_raw_data:66 - FUNCTION START: read_raw_data with file_name=sales_data.csv
+2025-05-26 10:35:35.132 | INFO     | __main__:read_raw_data:69 - Loaded dataframe with 2021 rows and 9 columns
+2025-05-26 10:35:35.135 | INFO     | __main__:read_raw_data:75 - Column datatypes: 
+TransactionID    float64
+SaleDate          object
+CustomerID       float64
+ProductID        float64
+StoreID          float64
+CampaignID       float64
+SaleAmount        object
+TaxAmount        float64
+PaymentType       object
+dtype: object
+2025-05-26 10:35:35.150 | INFO     | __main__:read_raw_data:76 - Number of unique values: 
+TransactionID    2000
+SaleDate            2
+CustomerID        201
+ProductID         100
+StoreID             4
+CampaignID          4
+SaleAmount        915
+TaxAmount          14
+PaymentType         5
+dtype: int64
+2025-05-26 10:35:35.151 | INFO     | __main__:main:196 - Initial dataframe columns: TransactionID, SaleDate, CustomerID, ProductID, StoreID, CampaignID, SaleAmount, TaxAmount, PaymentType
+2025-05-26 10:35:35.151 | INFO     | __main__:main:197 - Initial dataframe shape: (2021, 9)
+2025-05-26 10:35:35.153 | INFO     | __main__:remove_duplicates:90 - FUNCTION START: remove_duplicates with dataframe shape=(2021, 9)
+2025-05-26 10:35:35.159 | INFO     | __main__:remove_duplicates:93 - Removed duplicates based on columns ['CustomerID', 'CampaignID'], new shape=(747, 9)
+2025-05-26 10:35:35.160 | INFO     | __main__:handle_missing_values:106 - FUNCTION START: handle_missing_values with dataframe shape=(747, 9)
+2025-05-26 10:35:35.166 | INFO     | __main__:handle_missing_values:110 - Missing values by column before handling:
+TransactionID     1
+SaleDate          1
+CustomerID        1
+ProductID         1
+StoreID           1
+CampaignID        2
+SaleAmount        1
+TaxAmount        19
+PaymentType      10
+dtype: int64
+2025-05-26 10:35:35.183 | INFO     | __main__:handle_missing_values:116 - Filled missing values in TransactionID with mean value 626.4289544235925
+2025-05-26 10:38:50.089 | INFO     | __main__:main:175 - ==================================
+2025-05-26 10:38:50.090 | INFO     | __main__:main:176 - STARTING prepare_sales_data.py
+2025-05-26 10:38:50.090 | INFO     | __main__:main:177 - ==================================
+2025-05-26 10:38:50.090 | INFO     | __main__:main:179 - Root         : C:\smart-sales-kamana
+2025-05-26 10:38:50.090 | INFO     | __main__:main:180 - data/raw     : C:\smart-sales-kamana\data\raw
+2025-05-26 10:38:50.091 | INFO     | __main__:main:181 - data/prepared: C:\smart-sales-kamana\data\prepared
+2025-05-26 10:38:50.091 | INFO     | __main__:main:182 - scripts      : C:\smart-sales-kamana\scripts
+2025-05-26 10:38:50.091 | INFO     | __main__:read_raw_data:66 - FUNCTION START: read_raw_data with file_name=sales_data.csv
+2025-05-26 10:38:50.098 | INFO     | __main__:read_raw_data:69 - Loaded dataframe with 2021 rows and 9 columns
+2025-05-26 10:38:50.100 | INFO     | __main__:read_raw_data:75 - Column datatypes: 
+TransactionID    float64
+SaleDate          object
+CustomerID       float64
+ProductID        float64
+StoreID          float64
+CampaignID       float64
+SaleAmount        object
+TaxAmount        float64
+PaymentType       object
+dtype: object
+2025-05-26 10:38:50.104 | INFO     | __main__:read_raw_data:76 - Number of unique values: 
+TransactionID    2000
+SaleDate            2
+CustomerID        201
+ProductID         100
+StoreID             4
+CampaignID          4
+SaleAmount        915
+TaxAmount          14
+PaymentType         5
+dtype: int64
+2025-05-26 10:38:50.104 | INFO     | __main__:main:194 - Initial dataframe columns: TransactionID, SaleDate, CustomerID, ProductID, StoreID, CampaignID, SaleAmount, TaxAmount, PaymentType
+2025-05-26 10:38:50.105 | INFO     | __main__:main:195 - Initial dataframe shape: (2021, 9)
+2025-05-26 10:38:50.106 | INFO     | __main__:remove_duplicates:90 - FUNCTION START: remove_duplicates with dataframe shape=(2021, 9)
+2025-05-26 10:38:50.108 | INFO     | __main__:remove_duplicates:93 - Removed duplicates based on columns ['CustomerID', 'CampaignID'], new shape=(747, 9)
+2025-05-26 10:38:50.109 | INFO     | __main__:handle_missing_values:106 - FUNCTION START: handle_missing_values with dataframe shape=(747, 9)
+2025-05-26 10:38:50.114 | INFO     | __main__:handle_missing_values:110 - Missing values by column before handling:
+TransactionID     1
+SaleDate          1
+CustomerID        1
+ProductID         1
+StoreID           1
+CampaignID        2
+SaleAmount        1
+TaxAmount        19
+PaymentType      10
+dtype: int64
+2025-05-26 10:38:50.117 | INFO     | __main__:handle_missing_values:116 - Filled missing values in TransactionID with mean value 626.4289544235925
+2025-05-26 10:38:50.118 | INFO     | __main__:handle_missing_values:118 - Filled zero values in TransactionID with mean value 626.4289544235925
+2025-05-26 10:38:50.122 | INFO     | __main__:handle_missing_values:116 - Filled missing values in CustomerID with mean value 1111.1005361930295
+2025-05-26 10:38:50.125 | INFO     | __main__:handle_missing_values:118 - Filled zero values in CustomerID with mean value 1111.1005361930295
+2025-05-26 10:38:50.127 | INFO     | __main__:handle_missing_values:116 - Filled missing values in ProductID with mean value 2050.4034852546915
+2025-05-26 10:38:50.129 | INFO     | __main__:handle_missing_values:118 - Filled zero values in ProductID with mean value 2050.4034852546915
+2025-05-26 10:38:50.131 | INFO     | __main__:handle_missing_values:116 - Filled missing values in StoreID with mean value 402.5254691689008
+2025-05-26 10:38:50.132 | INFO     | __main__:handle_missing_values:118 - Filled zero values in StoreID with mean value 402.5254691689008
+2025-05-26 10:38:50.135 | INFO     | __main__:handle_missing_values:116 - Filled missing values in CampaignID with mean value 1.5060402684563758
+2025-05-26 10:38:50.138 | INFO     | __main__:handle_missing_values:118 - Filled zero values in CampaignID with mean value 1.5060402684563758
+2025-05-26 10:38:50.141 | INFO     | __main__:handle_missing_values:116 - Filled missing values in TaxAmount with mean value 13.821428571428571
+2025-05-26 10:38:50.142 | INFO     | __main__:handle_missing_values:118 - Filled zero values in TaxAmount with mean value 13.821428571428571
+2025-05-26 10:38:50.144 | INFO     | __main__:handle_missing_values:124 - Missing values by column after handling:
+TransactionID    0
+SaleDate         1
+CustomerID       0
+ProductID        0
+StoreID          0
+CampaignID       0
+SaleAmount       1
+TaxAmount        0
+PaymentType      0
+dtype: int64
+2025-05-26 10:38:50.145 | INFO     | __main__:handle_missing_values:125 - 747 records remaining after handling missing values.
+2025-05-26 10:38:50.146 | INFO     | __main__:remove_outliers:138 - FUNCTION START: remove_outliers with dataframe shape=(747, 9)
+2025-05-26 10:38:50.150 | INFO     | __main__:remove_outliers:145 - Removed outliers based on Sales, new shape=(747, 9)
+2025-05-26 10:38:50.153 | INFO     | __main__:remove_outliers:145 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:38:50.155 | INFO     | __main__:remove_outliers:145 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:38:50.157 | INFO     | __main__:remove_outliers:145 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:38:50.158 | INFO     | __main__:remove_outliers:145 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:38:50.160 | INFO     | __main__:remove_outliers:145 - Removed outliers based on Sales, new shape=(712, 9)
+2025-05-26 10:38:50.161 | INFO     | __main__:save_prepared_data:160 - FUNCTION START: save_prepared_data with file_name=sales_prepared.csv, dataframe shape=(712, 9)
+2025-05-26 10:38:50.172 | INFO     | __main__:save_prepared_data:163 - Data saved to C:\smart-sales-kamana\data\prepared\sales_prepared.csv
+2025-05-26 10:38:50.173 | INFO     | __main__:main:214 - ==================================
+2025-05-26 10:38:50.174 | INFO     | __main__:main:215 - Original shape: (2021, 9)
+2025-05-26 10:38:50.174 | INFO     | __main__:main:216 - Cleaned shape:  (712, 9)
+2025-05-26 10:38:50.174 | INFO     | __main__:main:217 - ==================================
+2025-05-26 10:38:50.175 | INFO     | __main__:main:218 - FINISHED prepare_sales_data.py
+2025-05-26 10:38:50.175 | INFO     | __main__:main:219 - ==================================
+2025-05-26 10:41:50.441 | INFO     | __main__:main:176 - ==================================
+2025-05-26 10:41:50.442 | INFO     | __main__:main:177 - STARTING prepare_sales_data.py
+2025-05-26 10:41:50.442 | INFO     | __main__:main:178 - ==================================
+2025-05-26 10:41:50.443 | INFO     | __main__:main:180 - Root         : C:\smart-sales-kamana
+2025-05-26 10:41:50.443 | INFO     | __main__:main:181 - data/raw     : C:\smart-sales-kamana\data\raw
+2025-05-26 10:41:50.443 | INFO     | __main__:main:182 - data/prepared: C:\smart-sales-kamana\data\prepared
+2025-05-26 10:41:50.443 | INFO     | __main__:main:183 - scripts      : C:\smart-sales-kamana\scripts
+2025-05-26 10:41:50.443 | INFO     | __main__:read_raw_data:66 - FUNCTION START: read_raw_data with file_name=sales_data.csv
+2025-05-26 10:41:50.452 | INFO     | __main__:read_raw_data:69 - Loaded dataframe with 2021 rows and 9 columns
+2025-05-26 10:41:50.454 | INFO     | __main__:read_raw_data:75 - Column datatypes: 
+TransactionID    float64
+SaleDate          object
+CustomerID       float64
+ProductID        float64
+StoreID          float64
+CampaignID       float64
+SaleAmount        object
+TaxAmount        float64
+PaymentType       object
+dtype: object
+2025-05-26 10:41:50.458 | INFO     | __main__:read_raw_data:76 - Number of unique values: 
+TransactionID    2000
+SaleDate            2
+CustomerID        201
+ProductID         100
+StoreID             4
+CampaignID          4
+SaleAmount        915
+TaxAmount          14
+PaymentType         5
+dtype: int64
+2025-05-26 10:41:50.459 | INFO     | __main__:main:195 - Initial dataframe columns: TransactionID, SaleDate, CustomerID, ProductID, StoreID, CampaignID, SaleAmount, TaxAmount, PaymentType
+2025-05-26 10:41:50.460 | INFO     | __main__:main:196 - Initial dataframe shape: (2021, 9)
+2025-05-26 10:41:50.461 | INFO     | __main__:remove_duplicates:90 - FUNCTION START: remove_duplicates with dataframe shape=(2021, 9)
+2025-05-26 10:41:50.465 | INFO     | __main__:remove_duplicates:93 - Removed duplicates based on columns ['CustomerID', 'CampaignID'], new shape=(747, 9)
+2025-05-26 10:41:50.467 | INFO     | __main__:handle_missing_values:106 - FUNCTION START: handle_missing_values with dataframe shape=(747, 9)
+2025-05-26 10:41:50.470 | INFO     | __main__:handle_missing_values:110 - Missing values by column before handling:
+TransactionID     1
+SaleDate          1
+CustomerID        1
+ProductID         1
+StoreID           1
+CampaignID        2
+SaleAmount        1
+TaxAmount        19
+PaymentType      10
+dtype: int64
+2025-05-26 10:41:50.472 | INFO     | __main__:handle_missing_values:113 - Handling missing values for column: TransactionID
+2025-05-26 10:41:50.476 | INFO     | __main__:handle_missing_values:117 - Filled missing values in TransactionID with mean value 626.4289544235925
+2025-05-26 10:41:50.479 | INFO     | __main__:handle_missing_values:119 - Filled zero values in TransactionID with mean value 626.4289544235925
+2025-05-26 10:41:50.480 | INFO     | __main__:handle_missing_values:113 - Handling missing values for column: CustomerID
+2025-05-26 10:41:50.483 | INFO     | __main__:handle_missing_values:117 - Filled missing values in CustomerID with mean value 1111.1005361930295
+2025-05-26 10:41:50.485 | INFO     | __main__:handle_missing_values:119 - Filled zero values in CustomerID with mean value 1111.1005361930295
+2025-05-26 10:41:50.486 | INFO     | __main__:handle_missing_values:113 - Handling missing values for column: ProductID
+2025-05-26 10:41:50.488 | INFO     | __main__:handle_missing_values:117 - Filled missing values in ProductID with mean value 2050.4034852546915
+2025-05-26 10:41:50.490 | INFO     | __main__:handle_missing_values:119 - Filled zero values in ProductID with mean value 2050.4034852546915
+2025-05-26 10:41:50.491 | INFO     | __main__:handle_missing_values:113 - Handling missing values for column: StoreID
+2025-05-26 10:41:50.493 | INFO     | __main__:handle_missing_values:117 - Filled missing values in StoreID with mean value 402.5254691689008
+2025-05-26 10:41:50.494 | INFO     | __main__:handle_missing_values:119 - Filled zero values in StoreID with mean value 402.5254691689008
+2025-05-26 10:41:50.495 | INFO     | __main__:handle_missing_values:113 - Handling missing values for column: CampaignID
+2025-05-26 10:41:50.497 | INFO     | __main__:handle_missing_values:117 - Filled missing values in CampaignID with mean value 1.5060402684563758
+2025-05-26 10:41:50.499 | INFO     | __main__:handle_missing_values:119 - Filled zero values in CampaignID with mean value 1.5060402684563758
+2025-05-26 10:41:50.500 | INFO     | __main__:handle_missing_values:113 - Handling missing values for column: TaxAmount
+2025-05-26 10:41:50.502 | INFO     | __main__:handle_missing_values:117 - Filled missing values in TaxAmount with mean value 13.821428571428571
+2025-05-26 10:41:50.504 | INFO     | __main__:handle_missing_values:119 - Filled zero values in TaxAmount with mean value 13.821428571428571
+2025-05-26 10:41:50.509 | INFO     | __main__:handle_missing_values:125 - Missing values by column after handling:
+TransactionID    0
+SaleDate         1
+CustomerID       0
+ProductID        0
+StoreID          0
+CampaignID       0
+SaleAmount       1
+TaxAmount        0
+PaymentType      0
+dtype: int64
+2025-05-26 10:41:50.510 | INFO     | __main__:handle_missing_values:126 - 747 records remaining after handling missing values.
+2025-05-26 10:41:50.511 | INFO     | __main__:remove_outliers:139 - FUNCTION START: remove_outliers with dataframe shape=(747, 9)
+2025-05-26 10:41:50.515 | INFO     | __main__:remove_outliers:146 - Removed outliers based on Sales, new shape=(747, 9)
+2025-05-26 10:41:50.517 | INFO     | __main__:remove_outliers:146 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:41:50.519 | INFO     | __main__:remove_outliers:146 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:41:50.520 | INFO     | __main__:remove_outliers:146 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:41:50.522 | INFO     | __main__:remove_outliers:146 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:41:50.523 | INFO     | __main__:remove_outliers:146 - Removed outliers based on Sales, new shape=(712, 9)
+2025-05-26 10:41:50.523 | INFO     | __main__:save_prepared_data:161 - FUNCTION START: save_prepared_data with file_name=sales_prepared.csv, dataframe shape=(712, 9)
+2025-05-26 10:41:50.532 | INFO     | __main__:save_prepared_data:164 - Data saved to C:\smart-sales-kamana\data\prepared\sales_prepared.csv
+2025-05-26 10:41:50.532 | INFO     | __main__:main:215 - ==================================
+2025-05-26 10:41:50.533 | INFO     | __main__:main:216 - Original shape: (2021, 9)
+2025-05-26 10:41:50.533 | INFO     | __main__:main:217 - Cleaned shape:  (712, 9)
+2025-05-26 10:41:50.534 | INFO     | __main__:main:218 - ==================================
+2025-05-26 10:41:50.535 | INFO     | __main__:main:219 - FINISHED prepare_sales_data.py
+2025-05-26 10:41:50.535 | INFO     | __main__:main:220 - ==================================
+2025-05-26 10:42:01.408 | INFO     | __main__:main:176 - ==================================
+2025-05-26 10:42:01.409 | INFO     | __main__:main:177 - STARTING prepare_sales_data.py
+2025-05-26 10:42:01.409 | INFO     | __main__:main:178 - ==================================
+2025-05-26 10:42:01.409 | INFO     | __main__:main:180 - Root         : C:\smart-sales-kamana
+2025-05-26 10:42:01.409 | INFO     | __main__:main:181 - data/raw     : C:\smart-sales-kamana\data\raw
+2025-05-26 10:42:01.409 | INFO     | __main__:main:182 - data/prepared: C:\smart-sales-kamana\data\prepared
+2025-05-26 10:42:01.409 | INFO     | __main__:main:183 - scripts      : C:\smart-sales-kamana\scripts
+2025-05-26 10:42:01.409 | INFO     | __main__:read_raw_data:66 - FUNCTION START: read_raw_data with file_name=sales_data.csv
+2025-05-26 10:42:01.420 | INFO     | __main__:read_raw_data:69 - Loaded dataframe with 2021 rows and 9 columns
+2025-05-26 10:42:01.421 | INFO     | __main__:read_raw_data:75 - Column datatypes: 
+TransactionID    float64
+SaleDate          object
+CustomerID       float64
+ProductID        float64
+StoreID          float64
+CampaignID       float64
+SaleAmount        object
+TaxAmount        float64
+PaymentType       object
+dtype: object
+2025-05-26 10:42:01.425 | INFO     | __main__:read_raw_data:76 - Number of unique values: 
+TransactionID    2000
+SaleDate            2
+CustomerID        201
+ProductID         100
+StoreID             4
+CampaignID          4
+SaleAmount        915
+TaxAmount          14
+PaymentType         5
+dtype: int64
+2025-05-26 10:42:01.425 | INFO     | __main__:main:195 - Initial dataframe columns: TransactionID, SaleDate, CustomerID, ProductID, StoreID, CampaignID, SaleAmount, TaxAmount, PaymentType
+2025-05-26 10:42:01.426 | INFO     | __main__:main:196 - Initial dataframe shape: (2021, 9)
+2025-05-26 10:42:01.427 | INFO     | __main__:remove_duplicates:90 - FUNCTION START: remove_duplicates with dataframe shape=(2021, 9)
+2025-05-26 10:42:01.430 | INFO     | __main__:remove_duplicates:93 - Removed duplicates based on columns ['CustomerID', 'CampaignID'], new shape=(747, 9)
+2025-05-26 10:42:01.431 | INFO     | __main__:handle_missing_values:106 - FUNCTION START: handle_missing_values with dataframe shape=(747, 9)
+2025-05-26 10:42:01.435 | INFO     | __main__:handle_missing_values:110 - Missing values by column before handling:
+TransactionID     1
+SaleDate          1
+CustomerID        1
+ProductID         1
+StoreID           1
+CampaignID        2
+SaleAmount        1
+TaxAmount        19
+PaymentType      10
+dtype: int64
+2025-05-26 10:42:01.437 | INFO     | __main__:handle_missing_values:113 - Handling missing values for column: TransactionID
+2025-05-26 10:42:01.441 | INFO     | __main__:handle_missing_values:117 - Filled missing values in TransactionID with mean value 626.4289544235925
+2025-05-26 10:42:01.443 | INFO     | __main__:handle_missing_values:119 - Filled zero values in TransactionID with mean value 626.4289544235925
+2025-05-26 10:42:01.444 | INFO     | __main__:handle_missing_values:113 - Handling missing values for column: CustomerID
+2025-05-26 10:42:01.445 | INFO     | __main__:handle_missing_values:117 - Filled missing values in CustomerID with mean value 1111.1005361930295
+2025-05-26 10:42:01.448 | INFO     | __main__:handle_missing_values:119 - Filled zero values in CustomerID with mean value 1111.1005361930295
+2025-05-26 10:42:01.448 | INFO     | __main__:handle_missing_values:113 - Handling missing values for column: ProductID
+2025-05-26 10:42:01.451 | INFO     | __main__:handle_missing_values:117 - Filled missing values in ProductID with mean value 2050.4034852546915
+2025-05-26 10:42:01.452 | INFO     | __main__:handle_missing_values:119 - Filled zero values in ProductID with mean value 2050.4034852546915
+2025-05-26 10:42:01.453 | INFO     | __main__:handle_missing_values:113 - Handling missing values for column: StoreID
+2025-05-26 10:42:01.455 | INFO     | __main__:handle_missing_values:117 - Filled missing values in StoreID with mean value 402.5254691689008
+2025-05-26 10:42:01.457 | INFO     | __main__:handle_missing_values:119 - Filled zero values in StoreID with mean value 402.5254691689008
+2025-05-26 10:42:01.458 | INFO     | __main__:handle_missing_values:113 - Handling missing values for column: CampaignID
+2025-05-26 10:42:01.461 | INFO     | __main__:handle_missing_values:117 - Filled missing values in CampaignID with mean value 1.5060402684563758
+2025-05-26 10:42:01.462 | INFO     | __main__:handle_missing_values:119 - Filled zero values in CampaignID with mean value 1.5060402684563758
+2025-05-26 10:42:01.463 | INFO     | __main__:handle_missing_values:113 - Handling missing values for column: TaxAmount
+2025-05-26 10:42:01.466 | INFO     | __main__:handle_missing_values:117 - Filled missing values in TaxAmount with mean value 13.821428571428571
+2025-05-26 10:42:01.468 | INFO     | __main__:handle_missing_values:119 - Filled zero values in TaxAmount with mean value 13.821428571428571
+2025-05-26 10:42:01.470 | INFO     | __main__:handle_missing_values:125 - Missing values by column after handling:
+TransactionID    0
+SaleDate         1
+CustomerID       0
+ProductID        0
+StoreID          0
+CampaignID       0
+SaleAmount       1
+TaxAmount        0
+PaymentType      0
+dtype: int64
+2025-05-26 10:42:01.472 | INFO     | __main__:handle_missing_values:126 - 747 records remaining after handling missing values.
+2025-05-26 10:42:01.473 | INFO     | __main__:remove_outliers:139 - FUNCTION START: remove_outliers with dataframe shape=(747, 9)
+2025-05-26 10:42:01.476 | INFO     | __main__:remove_outliers:146 - Removed outliers based on Sales, new shape=(747, 9)
+2025-05-26 10:42:01.477 | INFO     | __main__:remove_outliers:146 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:42:01.480 | INFO     | __main__:remove_outliers:146 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:42:01.481 | INFO     | __main__:remove_outliers:146 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:42:01.484 | INFO     | __main__:remove_outliers:146 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:42:01.486 | INFO     | __main__:remove_outliers:146 - Removed outliers based on Sales, new shape=(712, 9)
+2025-05-26 10:42:01.486 | INFO     | __main__:save_prepared_data:161 - FUNCTION START: save_prepared_data with file_name=sales_prepared.csv, dataframe shape=(712, 9)
+2025-05-26 10:42:01.496 | INFO     | __main__:save_prepared_data:164 - Data saved to C:\smart-sales-kamana\data\prepared\sales_prepared.csv
+2025-05-26 10:42:01.496 | INFO     | __main__:main:215 - ==================================
+2025-05-26 10:42:01.497 | INFO     | __main__:main:216 - Original shape: (2021, 9)
+2025-05-26 10:42:01.498 | INFO     | __main__:main:217 - Cleaned shape:  (712, 9)
+2025-05-26 10:42:01.499 | INFO     | __main__:main:218 - ==================================
+2025-05-26 10:42:01.499 | INFO     | __main__:main:219 - FINISHED prepare_sales_data.py
+2025-05-26 10:42:01.500 | INFO     | __main__:main:220 - ==================================
+2025-05-26 10:47:20.551 | INFO     | __main__:main:176 - ==================================
+2025-05-26 10:47:20.552 | INFO     | __main__:main:177 - STARTING prepare_sales_data.py
+2025-05-26 10:47:20.552 | INFO     | __main__:main:178 - ==================================
+2025-05-26 10:47:20.553 | INFO     | __main__:main:180 - Root         : C:\smart-sales-kamana
+2025-05-26 10:47:20.553 | INFO     | __main__:main:181 - data/raw     : C:\smart-sales-kamana\data\raw
+2025-05-26 10:47:20.553 | INFO     | __main__:main:182 - data/prepared: C:\smart-sales-kamana\data\prepared
+2025-05-26 10:47:20.554 | INFO     | __main__:main:183 - scripts      : C:\smart-sales-kamana\scripts
+2025-05-26 10:47:20.554 | INFO     | __main__:read_raw_data:66 - FUNCTION START: read_raw_data with file_name=sales_data.csv
+2025-05-26 10:47:20.588 | INFO     | __main__:read_raw_data:69 - Loaded dataframe with 2021 rows and 9 columns
+2025-05-26 10:47:20.589 | INFO     | __main__:read_raw_data:75 - Column datatypes: 
+TransactionID    float64
+SaleDate          object
+CustomerID       float64
+ProductID        float64
+StoreID          float64
+CampaignID       float64
+SaleAmount        object
+TaxAmount        float64
+PaymentType       object
+dtype: object
+2025-05-26 10:47:20.596 | INFO     | __main__:read_raw_data:76 - Number of unique values: 
+TransactionID    2000
+SaleDate            2
+CustomerID        201
+ProductID         100
+StoreID             4
+CampaignID          4
+SaleAmount        915
+TaxAmount          14
+PaymentType         5
+dtype: int64
+2025-05-26 10:47:20.597 | INFO     | __main__:main:195 - Initial dataframe columns: TransactionID, SaleDate, CustomerID, ProductID, StoreID, CampaignID, SaleAmount, TaxAmount, PaymentType
+2025-05-26 10:47:20.598 | INFO     | __main__:main:196 - Initial dataframe shape: (2021, 9)
+2025-05-26 10:47:20.599 | INFO     | __main__:remove_duplicates:90 - FUNCTION START: remove_duplicates with dataframe shape=(2021, 9)
+2025-05-26 10:47:20.603 | INFO     | __main__:remove_duplicates:93 - Removed duplicates based on columns ['CustomerID', 'CampaignID'], new shape=(747, 9)
+2025-05-26 10:47:20.604 | INFO     | __main__:handle_missing_values:106 - FUNCTION START: handle_missing_values with dataframe shape=(747, 9)
+2025-05-26 10:47:20.606 | INFO     | __main__:handle_missing_values:110 - Missing values by column before handling:
+TransactionID     1
+SaleDate          1
+CustomerID        1
+ProductID         1
+StoreID           1
+CampaignID        2
+SaleAmount        1
+TaxAmount        19
+PaymentType      10
+dtype: int64
+2025-05-26 10:47:37.699 | INFO     | __main__:main:176 - ==================================
+2025-05-26 10:47:37.700 | INFO     | __main__:main:177 - STARTING prepare_sales_data.py
+2025-05-26 10:47:37.700 | INFO     | __main__:main:178 - ==================================
+2025-05-26 10:47:37.700 | INFO     | __main__:main:180 - Root         : C:\smart-sales-kamana
+2025-05-26 10:47:37.701 | INFO     | __main__:main:181 - data/raw     : C:\smart-sales-kamana\data\raw
+2025-05-26 10:47:37.701 | INFO     | __main__:main:182 - data/prepared: C:\smart-sales-kamana\data\prepared
+2025-05-26 10:47:37.701 | INFO     | __main__:main:183 - scripts      : C:\smart-sales-kamana\scripts
+2025-05-26 10:47:37.702 | INFO     | __main__:read_raw_data:66 - FUNCTION START: read_raw_data with file_name=sales_data.csv
+2025-05-26 10:47:37.709 | INFO     | __main__:read_raw_data:69 - Loaded dataframe with 2021 rows and 9 columns
+2025-05-26 10:47:37.711 | INFO     | __main__:read_raw_data:75 - Column datatypes: 
+TransactionID    float64
+SaleDate          object
+CustomerID       float64
+ProductID        float64
+StoreID          float64
+CampaignID       float64
+SaleAmount        object
+TaxAmount        float64
+PaymentType       object
+dtype: object
+2025-05-26 10:47:37.713 | INFO     | __main__:read_raw_data:76 - Number of unique values: 
+TransactionID    2000
+SaleDate            2
+CustomerID        201
+ProductID         100
+StoreID             4
+CampaignID          4
+SaleAmount        915
+TaxAmount          14
+PaymentType         5
+dtype: int64
+2025-05-26 10:47:37.714 | INFO     | __main__:main:195 - Initial dataframe columns: TransactionID, SaleDate, CustomerID, ProductID, StoreID, CampaignID, SaleAmount, TaxAmount, PaymentType
+2025-05-26 10:47:37.714 | INFO     | __main__:main:196 - Initial dataframe shape: (2021, 9)
+2025-05-26 10:47:37.715 | INFO     | __main__:remove_duplicates:90 - FUNCTION START: remove_duplicates with dataframe shape=(2021, 9)
+2025-05-26 10:47:37.717 | INFO     | __main__:remove_duplicates:93 - Removed duplicates based on columns ['CustomerID', 'CampaignID'], new shape=(747, 9)
+2025-05-26 10:47:37.718 | INFO     | __main__:handle_missing_values:106 - FUNCTION START: handle_missing_values with dataframe shape=(747, 9)
+2025-05-26 10:47:37.722 | INFO     | __main__:handle_missing_values:110 - Missing values by column before handling:
+TransactionID     1
+SaleDate          1
+CustomerID        1
+ProductID         1
+StoreID           1
+CampaignID        2
+SaleAmount        1
+TaxAmount        19
+PaymentType      10
+dtype: int64
+2025-05-26 10:47:37.722 | INFO     | __main__:handle_missing_values:111 - Type of SaleAmount column is object
+2025-05-26 10:47:37.723 | INFO     | __main__:handle_missing_values:113 - Handling missing values for column: TransactionID
+2025-05-26 10:47:37.726 | INFO     | __main__:handle_missing_values:117 - Filled missing values in TransactionID with mean value 626.4289544235925
+2025-05-26 10:47:37.730 | INFO     | __main__:handle_missing_values:119 - Filled zero values in TransactionID with mean value 626.4289544235925
+2025-05-26 10:47:37.730 | INFO     | __main__:handle_missing_values:113 - Handling missing values for column: CustomerID
+2025-05-26 10:47:37.733 | INFO     | __main__:handle_missing_values:117 - Filled missing values in CustomerID with mean value 1111.1005361930295
+2025-05-26 10:47:37.734 | INFO     | __main__:handle_missing_values:119 - Filled zero values in CustomerID with mean value 1111.1005361930295
+2025-05-26 10:47:37.734 | INFO     | __main__:handle_missing_values:113 - Handling missing values for column: ProductID
+2025-05-26 10:47:37.736 | INFO     | __main__:handle_missing_values:117 - Filled missing values in ProductID with mean value 2050.4034852546915
+2025-05-26 10:47:37.740 | INFO     | __main__:handle_missing_values:119 - Filled zero values in ProductID with mean value 2050.4034852546915
+2025-05-26 10:47:37.740 | INFO     | __main__:handle_missing_values:113 - Handling missing values for column: StoreID
+2025-05-26 10:47:37.742 | INFO     | __main__:handle_missing_values:117 - Filled missing values in StoreID with mean value 402.5254691689008
+2025-05-26 10:47:37.742 | INFO     | __main__:handle_missing_values:119 - Filled zero values in StoreID with mean value 402.5254691689008
+2025-05-26 10:47:37.743 | INFO     | __main__:handle_missing_values:113 - Handling missing values for column: CampaignID
+2025-05-26 10:47:37.746 | INFO     | __main__:handle_missing_values:117 - Filled missing values in CampaignID with mean value 1.5060402684563758
+2025-05-26 10:47:37.748 | INFO     | __main__:handle_missing_values:119 - Filled zero values in CampaignID with mean value 1.5060402684563758
+2025-05-26 10:47:37.748 | INFO     | __main__:handle_missing_values:113 - Handling missing values for column: TaxAmount
+2025-05-26 10:47:37.751 | INFO     | __main__:handle_missing_values:117 - Filled missing values in TaxAmount with mean value 13.821428571428571
+2025-05-26 10:47:37.752 | INFO     | __main__:handle_missing_values:119 - Filled zero values in TaxAmount with mean value 13.821428571428571
+2025-05-26 10:47:37.757 | INFO     | __main__:handle_missing_values:125 - Missing values by column after handling:
+TransactionID    0
+SaleDate         1
+CustomerID       0
+ProductID        0
+StoreID          0
+CampaignID       0
+SaleAmount       1
+TaxAmount        0
+PaymentType      0
+dtype: int64
+2025-05-26 10:47:37.758 | INFO     | __main__:handle_missing_values:126 - 747 records remaining after handling missing values.
+2025-05-26 10:47:37.758 | INFO     | __main__:remove_outliers:139 - FUNCTION START: remove_outliers with dataframe shape=(747, 9)
+2025-05-26 10:47:37.760 | INFO     | __main__:remove_outliers:146 - Removed outliers based on Sales, new shape=(747, 9)
+2025-05-26 10:47:37.762 | INFO     | __main__:remove_outliers:146 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:47:37.764 | INFO     | __main__:remove_outliers:146 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:47:37.765 | INFO     | __main__:remove_outliers:146 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:47:37.767 | INFO     | __main__:remove_outliers:146 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:47:37.768 | INFO     | __main__:remove_outliers:146 - Removed outliers based on Sales, new shape=(712, 9)
+2025-05-26 10:47:37.768 | INFO     | __main__:save_prepared_data:161 - FUNCTION START: save_prepared_data with file_name=sales_prepared.csv, dataframe shape=(712, 9)
+2025-05-26 10:47:37.778 | INFO     | __main__:save_prepared_data:164 - Data saved to C:\smart-sales-kamana\data\prepared\sales_prepared.csv
+2025-05-26 10:47:37.779 | INFO     | __main__:main:215 - ==================================
+2025-05-26 10:47:37.779 | INFO     | __main__:main:216 - Original shape: (2021, 9)
+2025-05-26 10:47:37.780 | INFO     | __main__:main:217 - Cleaned shape:  (712, 9)
+2025-05-26 10:47:37.781 | INFO     | __main__:main:218 - ==================================
+2025-05-26 10:47:37.781 | INFO     | __main__:main:219 - FINISHED prepare_sales_data.py
+2025-05-26 10:47:37.781 | INFO     | __main__:main:220 - ==================================
+2025-05-26 10:49:47.842 | INFO     | __main__:main:178 - ==================================
+2025-05-26 10:49:47.843 | INFO     | __main__:main:179 - STARTING prepare_sales_data.py
+2025-05-26 10:49:47.843 | INFO     | __main__:main:180 - ==================================
+2025-05-26 10:49:47.844 | INFO     | __main__:main:182 - Root         : C:\smart-sales-kamana
+2025-05-26 10:49:47.844 | INFO     | __main__:main:183 - data/raw     : C:\smart-sales-kamana\data\raw
+2025-05-26 10:49:47.845 | INFO     | __main__:main:184 - data/prepared: C:\smart-sales-kamana\data\prepared
+2025-05-26 10:49:47.845 | INFO     | __main__:main:185 - scripts      : C:\smart-sales-kamana\scripts
+2025-05-26 10:49:47.846 | INFO     | __main__:read_raw_data:66 - FUNCTION START: read_raw_data with file_name=sales_data.csv
+2025-05-26 10:49:47.856 | INFO     | __main__:read_raw_data:69 - Loaded dataframe with 2021 rows and 9 columns
+2025-05-26 10:49:47.857 | INFO     | __main__:read_raw_data:75 - Column datatypes: 
+TransactionID    float64
+SaleDate          object
+CustomerID       float64
+ProductID        float64
+StoreID          float64
+CampaignID       float64
+SaleAmount        object
+TaxAmount        float64
+PaymentType       object
+dtype: object
+2025-05-26 10:49:47.860 | INFO     | __main__:read_raw_data:76 - Number of unique values: 
+TransactionID    2000
+SaleDate            2
+CustomerID        201
+ProductID         100
+StoreID             4
+CampaignID          4
+SaleAmount        915
+TaxAmount          14
+PaymentType         5
+dtype: int64
+2025-05-26 10:49:47.861 | INFO     | __main__:main:197 - Initial dataframe columns: TransactionID, SaleDate, CustomerID, ProductID, StoreID, CampaignID, SaleAmount, TaxAmount, PaymentType
+2025-05-26 10:49:47.863 | INFO     | __main__:main:198 - Initial dataframe shape: (2021, 9)
+2025-05-26 10:49:47.864 | INFO     | __main__:remove_duplicates:90 - FUNCTION START: remove_duplicates with dataframe shape=(2021, 9)
+2025-05-26 10:49:47.866 | INFO     | __main__:remove_duplicates:93 - Removed duplicates based on columns ['CustomerID', 'CampaignID'], new shape=(747, 9)
+2025-05-26 10:49:47.867 | INFO     | __main__:handle_missing_values:106 - FUNCTION START: handle_missing_values with dataframe shape=(747, 9)
+2025-05-26 10:49:47.869 | INFO     | __main__:handle_missing_values:110 - Missing values by column before handling:
+TransactionID     1
+SaleDate          1
+CustomerID        1
+ProductID         1
+StoreID           1
+CampaignID        2
+SaleAmount        1
+TaxAmount        19
+PaymentType      10
+dtype: int64
+2025-05-26 10:49:47.871 | INFO     | __main__:handle_missing_values:115 - Handling missing values for column: TransactionID
+2025-05-26 10:49:47.874 | INFO     | __main__:handle_missing_values:119 - Filled missing values in TransactionID with mean value 626.4289544235925
+2025-05-26 10:49:47.876 | INFO     | __main__:handle_missing_values:121 - Filled zero values in TransactionID with mean value 626.4289544235925
+2025-05-26 10:49:47.876 | INFO     | __main__:handle_missing_values:115 - Handling missing values for column: CustomerID
+2025-05-26 10:49:47.878 | INFO     | __main__:handle_missing_values:119 - Filled missing values in CustomerID with mean value 1111.1005361930295
+2025-05-26 10:49:47.880 | INFO     | __main__:handle_missing_values:121 - Filled zero values in CustomerID with mean value 1111.1005361930295
+2025-05-26 10:49:47.881 | INFO     | __main__:handle_missing_values:115 - Handling missing values for column: ProductID
+2025-05-26 10:49:47.883 | INFO     | __main__:handle_missing_values:119 - Filled missing values in ProductID with mean value 2050.4034852546915
+2025-05-26 10:49:47.885 | INFO     | __main__:handle_missing_values:121 - Filled zero values in ProductID with mean value 2050.4034852546915
+2025-05-26 10:49:47.885 | INFO     | __main__:handle_missing_values:115 - Handling missing values for column: StoreID
+2025-05-26 10:49:47.888 | INFO     | __main__:handle_missing_values:119 - Filled missing values in StoreID with mean value 402.5254691689008
+2025-05-26 10:49:47.890 | INFO     | __main__:handle_missing_values:121 - Filled zero values in StoreID with mean value 402.5254691689008
+2025-05-26 10:49:47.891 | INFO     | __main__:handle_missing_values:115 - Handling missing values for column: CampaignID
+2025-05-26 10:49:47.893 | INFO     | __main__:handle_missing_values:119 - Filled missing values in CampaignID with mean value 1.5060402684563758
+2025-05-26 10:49:47.894 | INFO     | __main__:handle_missing_values:121 - Filled zero values in CampaignID with mean value 1.5060402684563758
+2025-05-26 10:49:47.894 | INFO     | __main__:handle_missing_values:115 - Handling missing values for column: TaxAmount
+2025-05-26 10:49:47.896 | INFO     | __main__:handle_missing_values:119 - Filled missing values in TaxAmount with mean value 13.821428571428571
+2025-05-26 10:49:47.899 | INFO     | __main__:handle_missing_values:121 - Filled zero values in TaxAmount with mean value 13.821428571428571
+2025-05-26 10:49:47.902 | INFO     | __main__:handle_missing_values:127 - Missing values by column after handling:
+TransactionID    0
+SaleDate         1
+CustomerID       0
+ProductID        0
+StoreID          0
+CampaignID       0
+SaleAmount       1
+TaxAmount        0
+PaymentType      0
+dtype: int64
+2025-05-26 10:49:47.903 | INFO     | __main__:handle_missing_values:128 - 747 records remaining after handling missing values.
+2025-05-26 10:49:47.904 | INFO     | __main__:remove_outliers:141 - FUNCTION START: remove_outliers with dataframe shape=(747, 9)
+2025-05-26 10:49:47.907 | INFO     | __main__:remove_outliers:148 - Removed outliers based on Sales, new shape=(747, 9)
+2025-05-26 10:49:47.908 | INFO     | __main__:remove_outliers:148 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:49:47.909 | INFO     | __main__:remove_outliers:148 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:49:47.910 | INFO     | __main__:remove_outliers:148 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:49:47.912 | INFO     | __main__:remove_outliers:148 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:49:47.914 | INFO     | __main__:remove_outliers:148 - Removed outliers based on Sales, new shape=(712, 9)
+2025-05-26 10:49:47.914 | INFO     | __main__:save_prepared_data:163 - FUNCTION START: save_prepared_data with file_name=sales_prepared.csv, dataframe shape=(712, 9)
+2025-05-26 10:49:47.924 | INFO     | __main__:save_prepared_data:166 - Data saved to C:\smart-sales-kamana\data\prepared\sales_prepared.csv
+2025-05-26 10:49:47.925 | INFO     | __main__:main:217 - ==================================
+2025-05-26 10:49:47.925 | INFO     | __main__:main:218 - Original shape: (2021, 9)
+2025-05-26 10:49:47.925 | INFO     | __main__:main:219 - Cleaned shape:  (712, 9)
+2025-05-26 10:49:47.926 | INFO     | __main__:main:220 - ==================================
+2025-05-26 10:49:47.926 | INFO     | __main__:main:221 - FINISHED prepare_sales_data.py
+2025-05-26 10:49:47.927 | INFO     | __main__:main:222 - ==================================
+2025-05-26 10:51:50.801 | INFO     | __main__:main:179 - ==================================
+2025-05-26 10:51:50.802 | INFO     | __main__:main:180 - STARTING prepare_sales_data.py
+2025-05-26 10:51:50.802 | INFO     | __main__:main:181 - ==================================
+2025-05-26 10:51:50.802 | INFO     | __main__:main:183 - Root         : C:\smart-sales-kamana
+2025-05-26 10:51:50.802 | INFO     | __main__:main:184 - data/raw     : C:\smart-sales-kamana\data\raw
+2025-05-26 10:51:50.803 | INFO     | __main__:main:185 - data/prepared: C:\smart-sales-kamana\data\prepared
+2025-05-26 10:51:50.803 | INFO     | __main__:main:186 - scripts      : C:\smart-sales-kamana\scripts
+2025-05-26 10:51:50.803 | INFO     | __main__:read_raw_data:66 - FUNCTION START: read_raw_data with file_name=sales_data.csv
+2025-05-26 10:51:50.811 | INFO     | __main__:read_raw_data:69 - Loaded dataframe with 2021 rows and 9 columns
+2025-05-26 10:51:50.812 | INFO     | __main__:read_raw_data:75 - Column datatypes: 
+TransactionID    float64
+SaleDate          object
+CustomerID       float64
+ProductID        float64
+StoreID          float64
+CampaignID       float64
+SaleAmount        object
+TaxAmount        float64
+PaymentType       object
+dtype: object
+2025-05-26 10:51:50.818 | INFO     | __main__:read_raw_data:76 - Number of unique values: 
+TransactionID    2000
+SaleDate            2
+CustomerID        201
+ProductID         100
+StoreID             4
+CampaignID          4
+SaleAmount        915
+TaxAmount          14
+PaymentType         5
+dtype: int64
+2025-05-26 10:51:50.818 | INFO     | __main__:main:198 - Initial dataframe columns: TransactionID, SaleDate, CustomerID, ProductID, StoreID, CampaignID, SaleAmount, TaxAmount, PaymentType
+2025-05-26 10:51:50.819 | INFO     | __main__:main:199 - Initial dataframe shape: (2021, 9)
+2025-05-26 10:51:50.820 | INFO     | __main__:remove_duplicates:90 - FUNCTION START: remove_duplicates with dataframe shape=(2021, 9)
+2025-05-26 10:51:50.827 | INFO     | __main__:remove_duplicates:93 - Removed duplicates based on columns ['CustomerID', 'CampaignID'], new shape=(747, 9)
+2025-05-26 10:51:50.828 | INFO     | __main__:handle_missing_values:106 - FUNCTION START: handle_missing_values with dataframe shape=(747, 9)
+2025-05-26 10:51:50.830 | INFO     | __main__:handle_missing_values:110 - Missing values by column before handling:
+TransactionID     1
+SaleDate          1
+CustomerID        1
+ProductID         1
+StoreID           1
+CampaignID        2
+SaleAmount        1
+TaxAmount        19
+PaymentType      10
+dtype: int64
+2025-05-26 10:51:50.831 | INFO     | __main__:handle_missing_values:114 - Converted SaleAmount to float64, current dtype: float64
+2025-05-26 10:51:50.833 | INFO     | __main__:handle_missing_values:116 - Handling missing values for column: TransactionID
+2025-05-26 10:51:50.837 | INFO     | __main__:handle_missing_values:120 - Filled missing values in TransactionID with mean value 626.4289544235925
+2025-05-26 10:51:50.838 | INFO     | __main__:handle_missing_values:122 - Filled zero values in TransactionID with mean value 626.4289544235925
+2025-05-26 10:51:50.839 | INFO     | __main__:handle_missing_values:116 - Handling missing values for column: CustomerID
+2025-05-26 10:51:50.841 | INFO     | __main__:handle_missing_values:120 - Filled missing values in CustomerID with mean value 1111.1005361930295
+2025-05-26 10:51:50.843 | INFO     | __main__:handle_missing_values:122 - Filled zero values in CustomerID with mean value 1111.1005361930295
+2025-05-26 10:51:50.844 | INFO     | __main__:handle_missing_values:116 - Handling missing values for column: ProductID
+2025-05-26 10:51:50.846 | INFO     | __main__:handle_missing_values:120 - Filled missing values in ProductID with mean value 2050.4034852546915
+2025-05-26 10:51:50.847 | INFO     | __main__:handle_missing_values:122 - Filled zero values in ProductID with mean value 2050.4034852546915
+2025-05-26 10:51:50.847 | INFO     | __main__:handle_missing_values:116 - Handling missing values for column: StoreID
+2025-05-26 10:51:50.850 | INFO     | __main__:handle_missing_values:120 - Filled missing values in StoreID with mean value 402.5254691689008
+2025-05-26 10:51:50.852 | INFO     | __main__:handle_missing_values:122 - Filled zero values in StoreID with mean value 402.5254691689008
+2025-05-26 10:51:50.852 | INFO     | __main__:handle_missing_values:116 - Handling missing values for column: CampaignID
+2025-05-26 10:51:50.854 | INFO     | __main__:handle_missing_values:120 - Filled missing values in CampaignID with mean value 1.5060402684563758
+2025-05-26 10:51:50.855 | INFO     | __main__:handle_missing_values:122 - Filled zero values in CampaignID with mean value 1.5060402684563758
+2025-05-26 10:51:50.855 | INFO     | __main__:handle_missing_values:116 - Handling missing values for column: SaleAmount
+2025-05-26 10:51:50.856 | INFO     | __main__:handle_missing_values:120 - Filled missing values in SaleAmount with mean value 1006.5895844504023
+2025-05-26 10:51:50.858 | INFO     | __main__:handle_missing_values:122 - Filled zero values in SaleAmount with mean value 1006.5895844504023
+2025-05-26 10:51:50.859 | INFO     | __main__:handle_missing_values:116 - Handling missing values for column: TaxAmount
+2025-05-26 10:51:50.862 | INFO     | __main__:handle_missing_values:120 - Filled missing values in TaxAmount with mean value 13.821428571428571
+2025-05-26 10:51:50.863 | INFO     | __main__:handle_missing_values:122 - Filled zero values in TaxAmount with mean value 13.821428571428571
+2025-05-26 10:51:50.868 | INFO     | __main__:handle_missing_values:128 - Missing values by column after handling:
+TransactionID    0
+SaleDate         1
+CustomerID       0
+ProductID        0
+StoreID          0
+CampaignID       0
+SaleAmount       0
+TaxAmount        0
+PaymentType      0
+dtype: int64
+2025-05-26 10:51:50.869 | INFO     | __main__:handle_missing_values:129 - 747 records remaining after handling missing values.
+2025-05-26 10:51:50.870 | INFO     | __main__:remove_outliers:142 - FUNCTION START: remove_outliers with dataframe shape=(747, 9)
+2025-05-26 10:51:50.874 | INFO     | __main__:remove_outliers:149 - Removed outliers based on Sales, new shape=(747, 9)
+2025-05-26 10:51:50.877 | INFO     | __main__:remove_outliers:149 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:51:50.879 | INFO     | __main__:remove_outliers:149 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:51:50.880 | INFO     | __main__:remove_outliers:149 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:51:50.882 | INFO     | __main__:remove_outliers:149 - Removed outliers based on Sales, new shape=(746, 9)
+2025-05-26 10:51:50.883 | INFO     | __main__:remove_outliers:149 - Removed outliers based on Sales, new shape=(735, 9)
+2025-05-26 10:51:50.885 | INFO     | __main__:remove_outliers:149 - Removed outliers based on Sales, new shape=(702, 9)
+2025-05-26 10:51:50.885 | INFO     | __main__:save_prepared_data:164 - FUNCTION START: save_prepared_data with file_name=sales_prepared.csv, dataframe shape=(702, 9)
+2025-05-26 10:51:50.896 | INFO     | __main__:save_prepared_data:167 - Data saved to C:\smart-sales-kamana\data\prepared\sales_prepared.csv
+2025-05-26 10:51:50.896 | INFO     | __main__:main:218 - ==================================
+2025-05-26 10:51:50.897 | INFO     | __main__:main:219 - Original shape: (2021, 9)
+2025-05-26 10:51:50.898 | INFO     | __main__:main:220 - Cleaned shape:  (702, 9)
+2025-05-26 10:51:50.899 | INFO     | __main__:main:221 - ==================================
+2025-05-26 10:51:50.899 | INFO     | __main__:main:222 - FINISHED prepare_sales_data.py
+2025-05-26 10:51:50.899 | INFO     | __main__:main:223 - ==================================
+2025-05-26 10:53:57.153 | INFO     | __main__:main:222 - ==================================
+2025-05-26 10:53:57.154 | INFO     | __main__:main:223 - STARTING prepare_products_data.py
+2025-05-26 10:53:57.154 | INFO     | __main__:main:224 - ==================================
+2025-05-26 10:53:57.154 | INFO     | __main__:main:226 - Root         : C:\smart-sales-kamana
+2025-05-26 10:53:57.154 | INFO     | __main__:main:227 - data/raw     : C:\smart-sales-kamana\data\raw
+2025-05-26 10:53:57.155 | INFO     | __main__:main:228 - data/prepared: C:\smart-sales-kamana\data\prepared
+2025-05-26 10:53:57.155 | INFO     | __main__:main:229 - scripts      : C:\smart-sales-kamana\scripts
+2025-05-26 10:53:57.155 | INFO     | __main__:read_raw_data:64 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-05-26 10:53:57.156 | INFO     | __main__:read_raw_data:66 - Reading data from C:\smart-sales-kamana\data\raw\products_data.csv
+2025-05-26 10:53:57.179 | INFO     | __main__:read_raw_data:68 - Loaded dataframe with 100 rows and 6 columns
+2025-05-26 10:53:57.181 | INFO     | __main__:read_raw_data:70 - Column datatypes: 
+ProductID        int64
+ProductName     object
+Category        object
+UnitPrice      float64
+ProductSKU     float64
+Condition       object
+dtype: object
+2025-05-26 10:53:57.185 | INFO     | __main__:read_raw_data:71 - Number of unique values: 
+ProductID      100
+ProductName     98
+Category         4
+UnitPrice      100
+ProductSKU      96
+Condition        3
+dtype: int64
+2025-05-26 10:53:57.186 | INFO     | __main__:read_raw_data:64 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-05-26 10:53:57.187 | INFO     | __main__:read_raw_data:66 - Reading data from C:\smart-sales-kamana\data\raw\products_data.csv
+2025-05-26 10:53:57.189 | INFO     | __main__:read_raw_data:68 - Loaded dataframe with 100 rows and 6 columns
+2025-05-26 10:53:57.190 | INFO     | __main__:read_raw_data:70 - Column datatypes: 
+ProductID        int64
+ProductName     object
+Category        object
+UnitPrice      float64
+ProductSKU     float64
+Condition       object
+dtype: object
+2025-05-26 10:53:57.195 | INFO     | __main__:read_raw_data:71 - Number of unique values: 
+ProductID      100
+ProductName     98
+Category         4
+UnitPrice      100
+ProductSKU      96
+Condition        3
+dtype: int64
+2025-05-26 10:53:57.195 | INFO     | __main__:main:244 - Initial dataframe columns: ProductID, ProductName, Category, UnitPrice, ProductSKU, Condition
+2025-05-26 10:53:57.196 | INFO     | __main__:main:245 - Initial dataframe shape: (100, 6)
+2025-05-26 10:53:57.197 | INFO     | __main__:main:254 - Cleaned column names: ProductID -> productid, ProductName -> productname, Category -> category, UnitPrice -> unitprice, ProductSKU -> productsku, Condition -> condition
+2025-05-26 10:53:57.198 | INFO     | __main__:remove_duplicates:98 - FUNCTION START: remove_duplicates with dataframe shape=(100, 6)
+2025-05-26 10:53:57.200 | INFO     | __main__:remove_duplicates:108 - Removed 0 duplicate rows
+2025-05-26 10:53:57.200 | INFO     | __main__:remove_duplicates:109 - 100 records remaining after removing duplicates.
+2025-05-26 10:53:57.201 | INFO     | __main__:handle_missing_values:123 - FUNCTION START: handle_missing_values with dataframe shape=(100, 6)
+2025-05-26 10:53:57.203 | INFO     | __main__:handle_missing_values:128 - Missing values by column before handling:
+productid      0
+productname    0
+category       0
+unitprice      0
+productsku     3
+condition      1
+dtype: int64
+2025-05-26 10:53:57.215 | INFO     | __main__:handle_missing_values:140 - Missing values by column after handling:
+productid      0
+productname    0
+category       0
+unitprice      0
+productsku     0
+condition      0
+dtype: int64
+2025-05-26 10:53:57.216 | INFO     | __main__:handle_missing_values:141 - 100 records remaining after handling missing values.
+2025-05-26 10:53:57.216 | INFO     | __main__:remove_outliers:155 - FUNCTION START: remove_outliers with dataframe shape=(100, 6)
+2025-05-26 10:53:57.222 | INFO     | __main__:remove_outliers:170 - Applied outlier removal to unitprice: bounds [-518.0887499999999, 1544.90125]
+2025-05-26 10:53:57.224 | INFO     | __main__:remove_outliers:170 - Applied outlier removal to productsku: bounds [10154.0, 10364.0]
+2025-05-26 10:53:57.225 | INFO     | __main__:remove_outliers:173 - Removed 5 outlier rows
+2025-05-26 10:53:57.226 | INFO     | __main__:remove_outliers:174 - 95 records remaining after removing outliers.
+2025-05-26 10:53:57.226 | INFO     | __main__:validate_data:208 - FUNCTION START: validate_data with dataframe shape=(95, 6)
+2025-05-26 10:53:57.228 | INFO     | __main__:validate_data:212 - Found 0 products with out of range sku
+2025-05-26 10:53:57.229 | INFO     | __main__:validate_data:215 - Data validation complete
+2025-05-26 10:53:57.229 | INFO     | __main__:standardize_formats:187 - FUNCTION START: standardize_formats with dataframe shape=(95, 6)
+2025-05-26 10:53:57.231 | INFO     | __main__:standardize_formats:195 - Completed standardizing formats
+2025-05-26 10:53:57.232 | INFO     | __main__:save_prepared_data:83 - FUNCTION START: save_prepared_data with file_name=products_prepared.csv, dataframe shape=(95, 6)
+2025-05-26 10:53:57.238 | INFO     | __main__:save_prepared_data:86 - Data saved to C:\smart-sales-kamana\data\prepared\products_prepared.csv
+2025-05-26 10:53:57.239 | INFO     | __main__:main:271 - ==================================
+2025-05-26 10:53:57.239 | INFO     | __main__:main:272 - Original shape: (100, 6)
+2025-05-26 10:53:57.239 | INFO     | __main__:main:273 - Cleaned shape:  (95, 6)
+2025-05-26 10:53:57.240 | INFO     | __main__:main:274 - ==================================
+2025-05-26 10:53:57.240 | INFO     | __main__:main:275 - FINISHED prepare_products_data.py
+2025-05-26 10:53:57.240 | INFO     | __main__:main:276 - ==================================

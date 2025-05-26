@@ -9,7 +9,6 @@ productid,productname,category,unitprice,productsku,condition
 2007,Clothing-Over,electronics,583.39,10218.0,Used
 2008,Electronics-Skin,home,66.59,10219.0,New
 2009,Office-Raise,clothing,66.31,10220.0,New
-2010,Electronics-Themselves,clothing,77.84,496.39,Used
 2011,Electronics-Religious,clothing,409.74,10222.0,Used
 2012,Clothing-Artist,electronics,623.19,10223.0,New
 2013,Office-Cultural,home,935.36,10224.0,Used
@@ -24,7 +23,6 @@ productid,productname,category,unitprice,productsku,condition
 2022,Home-Economy,electronics,671.18,10233.0,Used
 2023,Home-Yeah,electronics,939.54,10234.0,New
 2024,Clothing-Paper,home,124.27,10235.0,Used
-2025,Electronics-Assume,clothing,279.62,0.0,Used
 2026,Clothing-Use,home,211.56,10237.0,New
 2027,Home-Purpose,office,258.61,10238.0,New
 2028,Electronics-Take,electronics,637.94,10239.0,Used
@@ -39,7 +37,6 @@ productid,productname,category,unitprice,productsku,condition
 2037,Clothing-Meeting,electronics,360.14,10248.0,Used
 2038,Office-Soon,clothing,926.51,10249.0,Used
 2039,Clothing-Need,clothing,976.44,10250.0,New
-2040,Clothing-Determine,office,34.54,496.39,Used
 2041,Home-Assume,office,804.21,10252.0,New
 2042,Clothing-Lawyer,home,167.61,10253.0,Used
 2043,Electronics-Practice,office,873.45,10253.0,Used
@@ -50,7 +47,6 @@ productid,productname,category,unitprice,productsku,condition
 2048,Electronics-Candidate,home,357.63,10259.0,New
 2049,Office-Easy,home,939.84,10260.0,Used
 2050,Electronics-Young,home,186.78,10261.0,New
-2051,Home-Century,electronics,117.32,101011111111262.0,Used
 2052,Office-Year,home,731.26,10263.0,Used
 2053,Home-Ground,office,610.15,10264.0,New
 2054,Electronics-Above,office,900.51,10265.0,New
@@ -96,6 +92,5 @@ productid,productname,category,unitprice,productsku,condition
 2094,Office-Fight,clothing,493.35,10305.0,New
 2095,Home-Seem,office,490.79,10306.0,Used
 2096,Office-Discuss,home,672.18,10307.0,New
-2097,Office-Recent,clothing,842.1,496.39,Used
 2098,Clothing-Trouble,electronics,907.86,10309.0,Used
 2099,Electronics-Several,electronics,646.32,10310.0,New
