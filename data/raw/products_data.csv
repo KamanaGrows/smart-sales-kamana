@@ -42,7 +42,7 @@ ProductID,ProductName,Category,UnitPrice,ProductSKU,Condition
 2040,Clothing-Determine,Office,34.54,,Used
 2041,Home-Assume,Office,804.21,10252,New
 2042,Clothing-Lawyer,Home,167.61,10253,Used
-2043,Electronics-Practice,Office,873.45,10254,Used
+2043,Electronics-Practice,Office,873.45,10253,Used
 2044,Office-Society,Clothing,207.58,10255,New
 2045,Office-Next,Home,312.14,10256,New
 2046,Clothing-Worry,Clothing,33.43,10257,Used
@@ -96,6 +96,6 @@ ProductID,ProductName,Category,UnitPrice,ProductSKU,Condition
 2094,Office-Fight,Clothing,493.35,10305,New
 2095,Home-Seem,Office,490.79,10306,Used
 2096,Office-Discuss,Home,672.18,10307,New
-2097,Office-Recent,Clothing,842.1,10308,Used
+2097,Office-Recent,Clothing,842.1,,Used
 2098,Clothing-Trouble,Electronics,907.86,10309,Used
 2099,Electronics-Several,Electronics,646.32,10310,New

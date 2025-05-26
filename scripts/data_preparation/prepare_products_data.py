@@ -67,11 +67,8 @@ def read_raw_data(file_name: str) -> pd.DataFrame:
     df = pd.read_csv(file_path)
     logger.info(f"Loaded dataframe with {len(df)} rows and {len(df.columns)} columns")
     
-    # TODO: OPTIONAL Add data profiling here to understand the dataset
-    # Suggestion: Log the datatypes of each column and the number of unique values
-    # Example:
-    # logger.info(f"Column datatypes: \n{df.dtypes}")
-    # logger.info(f"Number of unique values: \n{df.nunique()}")
+    logger.info(f"Column datatypes: \n{df.dtypes}")
+    logger.info(f"Number of unique values: \n{df.nunique()}")
     
     return df
 
@@ -130,15 +127,13 @@ def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:
     missing_by_col = df.isna().sum()
     logger.info(f"Missing values by column before handling:\n{missing_by_col}")
     
-    # TODO: OPTIONAL - We can implement appropriate missing value handling 
-    # specific to our data. 
     # For example: Different strategies may be needed for different columns
     # USE YOUR COLUMN NAMES - these are just examples
-    # df['product_name'].fillna('Unknown Product', inplace=True)
-    # df['description'].fillna('', inplace=True)
-    # df['price'].fillna(df['price'].median(), inplace=True)
-    # df['category'].fillna(df['category'].mode()[0], inplace=True)
-    # df.dropna(subset=['product_code'], inplace=True)  # Remove rows without product code
+    df['productname'].fillna('Unknown Product', inplace=True)
+    df['category'].fillna('', inplace=True)
+    df['productsku'].fillna(df['unitprice'].median(), inplace=True)
+    df['condition'].fillna('Unknown', inplace=True)  
+    df.dropna(subset=['productid'], inplace=True)  # Remove rows without product code
     
     # Log missing values by column after handling
     missing_after = df.isna().sum()
@@ -160,20 +155,19 @@ def remove_outliers(df: pd.DataFrame) -> pd.DataFrame:
     logger.info(f"FUNCTION START: remove_outliers with dataframe shape={df.shape}")
     initial_count = len(df)
     
-    # TODO: Identify numeric columns that might have outliers.
     # Recommended - just use ranges based on reasonable data
     # People should not be 22 feet tall, etc. 
     # OPTIONAL ADVANCED: Use IQR method to identify outliers in numeric columns
     # Example:
-    # for col in ['price', 'weight', 'length', 'width', 'height']:
-    #     if col in df.columns and df[col].dtype in ['int64', 'float64']:
-    #         Q1 = df[col].quantile(0.25)
-    #         Q3 = df[col].quantile(0.75)
-    #         IQR = Q3 - Q1
-    #         lower_bound = Q1 - 1.5 * IQR
-    #         upper_bound = Q3 + 1.5 * IQR
-    #         df = df[(df[col] >= lower_bound) & (df[col] <= upper_bound)]
-    #         logger.info(f"Applied outlier removal to {col}: bounds [{lower_bound}, {upper_bound}]")
+    for col in ['unitprice']:
+        if col in df.columns and df[col].dtype in ['int64', 'float64']:
+            Q1 = df[col].quantile(0.25)
+            Q3 = df[col].quantile(0.75)
+            IQR = Q3 - Q1
+            lower_bound = Q1 - 1.5 * IQR
+            upper_bound = Q3 + 1.5 * IQR
+            df = df[(df[col] >= lower_bound) & (df[col] <= upper_bound)]
+            logger.info(f"Applied outlier removal to {col}: bounds [{lower_bound}, {upper_bound}]")
     
     removed_count = initial_count - len(df)
     logger.info(f"Removed {removed_count} outlier rows")
@@ -192,13 +186,11 @@ def standardize_formats(df: pd.DataFrame) -> pd.DataFrame:
     """
     logger.info(f"FUNCTION START: standardize_formats with dataframe shape={df.shape}")
     
-    # TODO: OPTIONAL ADVANCED Implement standardization for product data
     # Suggestion: Consider standardizing text fields, units, and categorical variables
     # Examples (update based on your column names and types):
-    # df['product_name'] = df['product_name'].str.title()  # Title case for product names
-    # df['category'] = df['category'].str.lower()  # Lowercase for categories
-    # df['price'] = df['price'].round(2)  # Round prices to 2 decimal places
-    # df['weight_unit'] = df['weight_unit'].str.upper()  # Uppercase units
+    df['productname'] = df['productname'].str.title()  # Title case for product names
+    df['category'] = df['category'].str.lower()  # Lowercase for categories
+    df['unitprice'] = df['unitprice'].round(2)  # Round prices to 2 decimal places
     
     logger.info("Completed standardizing formats")
     return df
@@ -215,12 +207,10 @@ def validate_data(df: pd.DataFrame) -> pd.DataFrame:
     """
     logger.info(f"FUNCTION START: validate_data with dataframe shape={df.shape}")
     
-    # TODO: Implement data validation rules specific to products
     # Suggestion: Check for valid values in critical fields
-    # Example:
-    # invalid_prices = df[df['price'] < 0].shape[0]
-    # logger.info(f"Found {invalid_prices} products with negative prices")
-    # df = df[df['price'] >= 0]
+    invalid_sku = df[df['productsku'] > 99999].shape[0]
+    logger.info(f"Found {invalid_sku} products with out of range sku")
+    df = df[df['unitprice'] > 0]
     
     logger.info("Data validation complete")
     return df
@@ -233,15 +223,10 @@ def main() -> None:
     logger.info("STARTING prepare_products_data.py")
     logger.info("==================================")
 
-    logger.info(f"Root         : {SCRIPTS_DATA_PREP_DIR}")
     logger.info(f"Root         : {PROJECT_ROOT}")
     logger.info(f"data/raw     : {RAW_DATA_DIR}")
     logger.info(f"data/prepared: {PREPARED_DATA_DIR}")
     logger.info(f"scripts      : {SCRIPTS_DIR}")
-    logger.info( pathlib.Path(__file__))
-    logger.info( pathlib.Path(__file__).resolve())
-    logger.info( pathlib.Path(__file__).resolve().parent)
-    SCRIPTS_DATA_PREP_DIR
 
     input_file = "products_data.csv"
     output_file = "products_prepared.csv"
@@ -274,21 +259,18 @@ def main() -> None:
     # Handle missing values
     df = handle_missing_values(df)
 
-    # TODO:Remove outliers
     df = remove_outliers(df)
 
-    # TODO: Validate data
     df = validate_data(df)
 
-    # TODO: Standardize formats
     df = standardize_formats(df)
 
     # Save prepared data
     save_prepared_data(df, output_file)
 
     logger.info("==================================")
-    logger.info(f"Original shape: {df.shape}")
-    logger.info(f"Cleaned shape:  {original_shape}")
+    logger.info(f"Original shape: {original_shape}")
+    logger.info(f"Cleaned shape:  {df.shape}")
     logger.info("==================================")
     logger.info("FINISHED prepare_products_data.py")
     logger.info("==================================")

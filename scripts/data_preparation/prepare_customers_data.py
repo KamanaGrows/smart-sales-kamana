@@ -125,12 +125,27 @@ def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:
     missing_before = df.isna().sum().sum()
     logger.info(f"Total missing values before handling: {missing_before}")
     
-    # TODO: Fill or drop missing values based on business rules
     # Example:
-    # df['CustomerName'].fillna('Unknown', inplace=True)
-    # df.dropna(subset=['CustomerID'], inplace=True)
+    df['Name'].fillna('Unknown', inplace=True)
+    df.dropna(subset=['CustomerID'], inplace=True)
+    df['RewardsPoints'].fillna(df['RewardsPoints'].mean(), inplace=True) 
+
+    def assign_member_tier(RewardsPoints: float) -> str:
+        """
+        Assign member tier based on RewardsPoints.
+        """
+        if RewardsPoints <= 1000:
+            return 'Silver'
+        elif RewardsPoints <= 10000:
+            return 'Gold'
+        else:
+            return 'Platinum'
+    # Assign member tier based on RewardsPoints
+    df['MemberTier'] = df.apply(
+    lambda row: assign_member_tier(row['RewardsPoints']) if pd.isna(row['MemberTier']) else row['MemberTier'],
+    axis=1
+)
     
-    # Log missing values count after handling
     missing_after = df.isna().sum().sum()
     logger.info(f"Total missing values after handling: {missing_after}")
     logger.info(f"{len(df)} records remaining after handling missing values.")
@@ -150,12 +165,17 @@ def remove_outliers(df: pd.DataFrame) -> pd.DataFrame:
     logger.info(f"FUNCTION START: remove_outliers with dataframe shape={df.shape}")
     initial_count = len(df)
     
-    # TODO: Define numeric columns and apply rules for outlier removal
-    # Example:
-    # df = df[(df['Age'] > 18) & (df['Age'] < 100)]
+    df = df[((df['RewardsPoints'] <= 1000) & (df['MemberTier'] == 'Silver')) |
+            ((df['RewardsPoints'] <= 10000) & (df['MemberTier'] == 'Gold')) | 
+            ((df['RewardsPoints'] <= 100000) & (df['MemberTier'] == 'Platinum'))]  
     
-    removed_count = initial_count - len(df)
-    logger.info(f"Removed {removed_count} outlier rows")
+    removed_count_A = initial_count - len(df)
+    logger.info(f"Removed {removed_count_A} outlier rows based on RewardsPoints and MemberTier.")
+
+    df = df[df['CustomerID'] <= 2000]  
+    
+    final_removed_count = initial_count - len(df)
+    logger.info(f"Removed Total {final_removed_count} outlier rows")
     logger.info(f"{len(df)} records remaining after removing outliers.")
     return df
 
@@ -212,8 +232,8 @@ def main() -> None:
     save_prepared_data(df, output_file)
 
     logger.info("==================================")
-    logger.info(f"Original shape: {df.shape}")
-    logger.info(f"Cleaned shape:  {original_shape}")
+    logger.info(f"Original shape: {original_shape}")
+    logger.info(f"Cleaned shape:  {df.shape}")
     logger.info("==================================")
     logger.info("FINISHED prepare_customers_data.py")
     logger.info("==================================")

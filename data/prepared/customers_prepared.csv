@@ -5,14 +5,11 @@ CustomerID,Name,Region,JoinDate,RewardsPoints,MemberTier
 1003,David Brennan,North,5/21/2020,601.0,Silver
 1004,Kerry Collins,North,9/12/2023,99.0,Silver
 1005,Jessica Mora,South,8/5/2021,761.0,Silver
-1006,Hannah Ray,West,7/3/2021,,Silver
 1007,David Kim,West,5/20/2020,18.0,Silver
 1008,William Ramirez,EAST,9/15/2023,19.0,Silver
-1009,Zachary Bell Jr.,East,4/20/2023,754.0,
+1009,Zachary Bell Jr.,East,4/20/2023,754.0,Silver
 1010,Mike Davis,East,3/23/2022,121.0,Silver
-1011,Amanda Myers,West,9/5/2021,4324.0,Silver
 1012,Tara Miller,North,8/10/2020,345.0,Silver
-1013,Alyssa Morgan,North,7/22/2022,,Silver
 1014,Cindy Woods,East,4/2/2024,521.0,Silver
 1015,Jennifer Rodgers,North,2/12/2023,573.0,Silver
 1016,Andrea Roberts,EAST,5/16/2021,567.0,Silver
@@ -43,7 +40,6 @@ CustomerID,Name,Region,JoinDate,RewardsPoints,MemberTier
 1041,David Beltran,east,1/18/2021,248.0,Silver
 1042,Christopher Dodson,North,10/30/2023,249.0,Silver
 1043,Eric Pena,West,6/30/2022,250.0,Silver
-1044,Anita Huerta,East,4/8/2022,,Silver
 1045,Dr. Susan Bailey,North,10/2/2020,252.0,Silver
 1046,Tyler Colon,Central,3/3/2021,253.0,Silver
 1047,Ashley Pearson,West,10/4/2020,254.0,Silver
@@ -124,7 +120,6 @@ CustomerID,Name,Region,JoinDate,RewardsPoints,MemberTier
 1122,Christopher Martinez,east,10/7/2021,7533.0,Gold
 1123,Colleen Greene,south-west,8/21/2022,7513.0,Gold
 1124,Megan Novak,East,12/19/2022,7548.0,Gold
-1125,Debbie Andrews,West,5/22/2021,75243.0,Gold
 1126,Lee Luna,east,1/19/2021,7549.0,Gold
 1127,George Edwards,Central,5/12/2023,2543.0,Gold
 1128,Vincent Day,North,7/3/2022,7513.0,Gold
@@ -137,7 +132,6 @@ CustomerID,Name,Region,JoinDate,RewardsPoints,MemberTier
 1135,Christopher Chen,South,9/10/2023,7393.0,Gold
 1136,Scott Hernandez,South,2/9/2024,3453.0,Gold
 1137,Jessica Harmon,south-west,11/5/2022,5543.0,Gold
-1138,Bonnie Stewart,South,4/19/2022,234116879.0,Gold
 1139,Heather Olson,Central,4/20/2021,7553.0,Gold
 1140,Carla Flores,EAST,9/30/2020,7789.0,Gold
 1141,David Palmer,North,9/16/2022,7790.0,Gold
@@ -178,7 +172,6 @@ CustomerID,Name,Region,JoinDate,RewardsPoints,MemberTier
 1176,Ashley Williams,EAST,11/24/2021,8888.0,Gold
 1177,Katherine West,east,11/1/2020,7777.0,Gold
 1178,Katherine Kerr,EAST,11/13/2020,6667.0,Gold
-1179,Desiree Miller,EAST,12/21/2021,,Gold
 1180,Jennifer Smith,south-west,10/3/2020,6075.0,Gold
 1181,Tiffany Smith,East,4/7/2024,6072.0,Gold
 1182,James Gray,West,7/24/2020,8967.0,Gold
