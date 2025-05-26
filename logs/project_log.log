@@ -2525,3 +2525,115 @@ dtype: int64
 2025-05-25 23:52:18.230 | INFO     | __main__:main:274 - ==================================
 2025-05-25 23:52:18.230 | INFO     | __main__:main:275 - FINISHED prepare_products_data.py
 2025-05-25 23:52:18.231 | INFO     | __main__:main:276 - ==================================
+2025-05-26 01:21:12.436 | INFO     | tests.test_data_scrubber:test_drop_column:27 - DataFrame after dropping columns ['Name']:
+   ID  Age
+0   1   20
+1   2   27
+2   3   44
+3   4   30
+4   5   57
+5   6   47
+6   7   31
+2025-05-26 01:22:20.087 | INFO     | tests.test_data_scrubber:test_drop_column:27 - DataFrame after dropping columns ['Name']:
+   ID  Age
+0   1   20
+1   2   27
+2   3   44
+3   4   30
+4   5   57
+5   6   47
+6   7   31
+2025-05-26 01:22:46.937 | INFO     | tests.test_data_scrubber:test_drop_column:27 - DataFrame after dropping columns ['Name']:
+   ID  Age
+0   1   20
+1   2   27
+2   3   44
+3   4   30
+4   5   57
+5   6   47
+6   7   31
+2025-05-26 01:23:25.465 | INFO     | tests.test_data_scrubber:test_drop_column:27 - DataFrame after dropping columns ['Name']:
+   ID  Age
+0   1   20
+1   2   27
+2   3   44
+3   4   30
+4   5   57
+5   6   47
+6   7   31
+2025-05-26 01:24:29.947 | INFO     | tests.test_data_scrubber:test_drop_column:27 - DataFrame after dropping columns ['Name']:
+   ID  Age
+0   1   20
+1   2   27
+2   3   44
+3   4   30
+4   5   57
+5   6   47
+6   7   31
+2025-05-26 01:24:29.952 | INFO     | tests.test_data_scrubber:test_filter_column_outliers:33 - DataFrame after filtering outliers in 'Age':
+   ID  Name  Age
+1   2   Tom   27
+2   3  Jose   44
+3   4   Sam   30
+5   6   Kai   47
+6   7   Sai   31
+2025-05-26 01:24:59.069 | INFO     | tests.test_data_scrubber:test_drop_column:27 - DataFrame after dropping columns ['Name']:
+   ID  Age
+0   1   20
+1   2   27
+2   3   44
+3   4   30
+4   5   57
+5   6   47
+6   7   31
+2025-05-26 01:24:59.073 | INFO     | tests.test_data_scrubber:test_filter_column_outliers:33 - DataFrame after filtering outliers in 'Age':
+   ID  Name  Age
+1   2   Tom   27
+2   3  Jose   44
+3   4   Sam   30
+5   6   Kai   47
+6   7   Sai   31
+2025-05-26 01:25:16.699 | INFO     | tests.test_data_scrubber:test_drop_column:27 - DataFrame after dropping columns ['Name']:
+   ID  Age
+0   1   20
+1   2   27
+2   3   44
+3   4   30
+4   5   57
+5   6   47
+6   7   31
+2025-05-26 01:25:16.703 | INFO     | tests.test_data_scrubber:test_filter_column_outliers:33 - DataFrame after filtering outliers in 'Age':
+   ID  Name  Age
+0   1   Ram   20
+1   2   Tom   27
+2   3  Jose   44
+3   4   Sam   30
+5   6   Kai   47
+6   7   Sai   31
+2025-05-26 01:32:14.588 | INFO     | tests.test_data_scrubber:test_drop_column:27 - DataFrame after dropping columns ['Name']:
+   ID  Age
+0   1   20
+1   2   27
+2   3   44
+3   4   30
+4   5   57
+5   5   57
+6   6   47
+7   7   31
+2025-05-26 01:32:14.591 | INFO     | tests.test_data_scrubber:test_filter_column_outliers:33 - DataFrame after filtering outliers in 'Age':
+   ID  Name  Age
+0   1   Ram   20
+1   2   Tom   27
+2   3  Jose   44
+3   4   Sam   30
+6   6   Kai   47
+7   7   Sai   31
+2025-05-26 01:32:14.598 | INFO     | tests.test_data_scrubber:test_remove_duplicate_records:39 - DataFrame after removing duplicates:
+   ID  Name  Age
+0   1   Ram   20
+1   2   Tom   27
+2   3  Jose   44
+3   4   Sam   30
+4   5   Bob   57
+6   6   Kai   47
+7   7   Sai   31
