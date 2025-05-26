@@ -159,7 +159,7 @@ def remove_outliers(df: pd.DataFrame) -> pd.DataFrame:
     # People should not be 22 feet tall, etc. 
     # OPTIONAL ADVANCED: Use IQR method to identify outliers in numeric columns
     # Example:
-    for col in ['unitprice']:
+    for col in ['unitprice', 'productsku']:
         if col in df.columns and df[col].dtype in ['int64', 'float64']:
             Q1 = df[col].quantile(0.25)
             Q3 = df[col].quantile(0.75)

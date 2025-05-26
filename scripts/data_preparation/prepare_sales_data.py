@@ -108,13 +108,19 @@ def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:
 
     missing_by_col = df.isna().sum()
     logger.info(f"Missing values by column before handling:\n{missing_by_col}")
-
+    
+    #Convert SaleAmount column to float64 if not already
+    df['SaleAmount'] = df['SaleAmount'].astype('float64')
+    logger.info(f"Converted SaleAmount to float64, current dtype: {df['SaleAmount'].dtype}")
     for column in df.select_dtypes(include=['float64', 'int64']).columns:
+        logger.info(f"Handling missing values for column: {column}")
         mean_value = df[column].mean()
         round_times = 1  if column == 'CampaignID' else 2  # Round CampaignID to 1 decimal places, others to 2
         df[column].fillna(mean_value.round(round_times), inplace=True)
         logger.info(f"Filled missing values in {column} with mean value {mean_value}")
-    
+        df.loc[df[column] <= 0, column] = mean_value.round(round_times)  # Fill zero values with mean
+        logger.info(f"Filled zero values in {column} with mean value {mean_value}")
+
     df['PaymentType'].fillna('Cash', inplace=True)  
     
     # Log missing values by column after handling
