@@ -101,12 +101,12 @@ def remove_duplicates(df: pd.DataFrame) -> pd.DataFrame:
     # Now, call the method on our instance to remove duplicates.
     # This method will return a new dataframe with duplicates removed.
     df_deduped = df_scrubber.remove_duplicate_records()
+    df_unique_primarykeys = df_deduped.drop_duplicates(subset=['CustomerID'], keep='first')
     
     logger.info(f"Original dataframe shape: {df.shape}")
-    logger.info(f"Deduped  dataframe shape: {df_deduped.shape}")
-    return df_deduped
-
-
+    logger.info(f"Deduped dataframe shape: {df_deduped.shape}")
+    logger.info(f"Deduped primarykey dataframe shape: {df_unique_primarykeys.shape}")
+    return df_unique_primarykeys
 
 def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:
     """

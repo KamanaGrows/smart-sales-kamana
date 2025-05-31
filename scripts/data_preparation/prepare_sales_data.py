@@ -19,6 +19,7 @@ Tasks:
 # Import from Python Standard Library
 import pathlib
 import sys
+import numpy as np
 
 # Import from external packages (requires a virtual environment)
 import pandas as pd
@@ -88,7 +89,7 @@ def remove_duplicates(df: pd.DataFrame) -> pd.DataFrame:
         pd.DataFrame: DataFrame without duplicates.
     """
     logger.info(f"FUNCTION START: remove_duplicates with dataframe shape={df.shape}")
-    columns_to_remove = ["CustomerID", "CampaignID"]
+    columns_to_remove = ["TransactionID","CustomerID", "CampaignID"]
     df = df.drop_duplicates(subset=columns_to_remove, keep='first')
     logger.info(f"Removed duplicates based on columns {columns_to_remove}, new shape={df.shape}")
     return df
@@ -110,19 +111,19 @@ def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:
     logger.info(f"Missing values by column before handling:\n{missing_by_col}")
     
     #Convert SaleAmount column to float64 if not already
-    df['SaleAmount'] = df['SaleAmount'].astype('float64')
-    logger.info(f"Converted SaleAmount to float64, current dtype: {df['SaleAmount'].dtype}")
+    df['SaleAmount'] = pd.to_numeric(df['SaleAmount'], errors='coerce')
+    df['SaleAmount'] = df['SaleAmount'].fillna(0)
     for column in df.select_dtypes(include=['float64', 'int64']).columns:
         logger.info(f"Handling missing values for column: {column}")
         mean_value = df[column].mean()
-        round_times = 1  if column == 'CampaignID' else 2  # Round CampaignID to 1 decimal places, others to 2
+        round_times = 0  if column == 'CampaignID' else 2  # Round CampaignID to 1 decimal places, others to 2
         df[column].fillna(mean_value.round(round_times), inplace=True)
         logger.info(f"Filled missing values in {column} with mean value {mean_value}")
         df.loc[df[column] <= 0, column] = mean_value.round(round_times)  # Fill zero values with mean
         logger.info(f"Filled zero values in {column} with mean value {mean_value}")
 
     df['PaymentType'].fillna('Cash', inplace=True)  
-    
+    df= df.dropna(subset=['SaleDate'])
     # Log missing values by column after handling
     missing_by_col = df.isna().sum()
     logger.info(f"Missing values by column after handling:\n{missing_by_col}")
@@ -148,6 +149,7 @@ def remove_outliers(df: pd.DataFrame) -> pd.DataFrame:
         df = df[(df[column] >= (mean - threshold)) & (df[column] <= (mean + threshold))]
         logger.info(f"Removed outliers based on Sales, new shape={df.shape}")
     
+    df['TransactionID'] = np.floor(df['TransactionID']).astype(float)
     return df
 
 def save_prepared_data(df: pd.DataFrame, file_name: str) -> pd.DataFrame:
@@ -206,10 +208,10 @@ def main() -> None:
     changed_columns = [f"{old} -> {new}" for old, new in zip(original_columns, df.columns) if old != new]
     if changed_columns:
         logger.info(f"Cleaned column names: {', '.join(changed_columns)}")
-
-    df = remove_duplicates(df)
     
     df = handle_missing_values(df)
+
+    df = remove_duplicates(df)
 
     df = remove_outliers(df)
 
