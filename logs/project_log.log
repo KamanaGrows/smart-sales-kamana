@@ -4700,3 +4700,8 @@ dtype: int64
 2025-05-30 08:57:49.247 | INFO     | __main__:main:223 - ==================================
 2025-05-30 08:57:49.248 | INFO     | __main__:main:224 - FINISHED prepare_sales_data.py
 2025-05-30 08:57:49.248 | INFO     | __main__:main:225 - ==================================
+2025-06-02 22:56:51.457 | INFO     | __main__:load_data_to_db:84 - Connected to SQLite database at data\dw\smart_sales.db
+2025-06-02 22:56:51.467 | INFO     | __main__:load_data_to_db:90 - Schema created and existing records deleted.
+2025-06-02 22:56:51.560 | INFO     | __main__:load_data_to_db:135 - Inserted 193 records into customer table.
+2025-06-02 22:56:51.570 | INFO     | __main__:load_data_to_db:138 - Inserted 95 records into product table.
+2025-06-02 22:56:51.593 | INFO     | __main__:load_data_to_db:141 - Inserted 1897 records into sale table.

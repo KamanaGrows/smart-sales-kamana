@@ -8,6 +8,9 @@ PROJECT_ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.append(str(PROJECT_ROOT))
 
+from utils.logger import logger  
+
+
 # Constants
 DW_DIR = pathlib.Path("data").joinpath("dw")
 DW_DIR.mkdir(parents=True, exist_ok=True)  # Needed to add this line to ensure the data warehouse directory exists
@@ -78,10 +81,13 @@ def load_data_to_db() -> None:
         # Connect to SQLite – will create the file if it doesn't exist
         conn = sqlite3.connect(DB_PATH)
         cursor = conn.cursor()
+        logger.info(f"Connected to SQLite database at {DB_PATH}")
+
 
         # Create schema and clear existing records
         create_schema(cursor)
         delete_existing_records(cursor)
+        logger.info("Schema created and existing records deleted.")
 
         # Load prepared data using pandas
         customers_df = pd.read_csv(PREPARED_DATA_DIR.joinpath("customers_prepared.csv"))
@@ -93,7 +99,7 @@ def load_data_to_db() -> None:
             "RewardsPoints": "rewards_points",
             "MemberTier": "member_tier"
         })
-        print("customers_df columns:", customers_df.dtypes)
+        
         products_df = pd.read_csv(PREPARED_DATA_DIR.joinpath("products_prepared.csv"))
         products_df = products_df.rename(columns={
             "productid": "product_id",
@@ -103,9 +109,9 @@ def load_data_to_db() -> None:
             "productsku": "product_sku",
             "condition": "condition"
         })
-        print("products_df columns:", products_df.dtypes)
+        
         sales_df = pd.read_csv(PREPARED_DATA_DIR.joinpath("sales_prepared.csv"))
-        sales_df['CustomerID'] = sales_df['CustomerID'].astype('Int64')
+        sales_df['CustomerID'] = sales_df['CustomerID'].astype('Int64') # Use 'Int64' for matching datatype in SQLite
         sales_df['ProductID'] = sales_df['ProductID'].astype('Int64')
         sales_df = sales_df.rename(columns={
             "TransactionID": "sale_id",
@@ -121,12 +127,18 @@ def load_data_to_db() -> None:
         print("sales_df columns:", sales_df.dtypes)
 
         #Delete Exisiting Records first
-        delete_existing_records(cursor)
+        #delete_existing_records(cursor)
+        #logger.info("Existing records deleted from all tables.")
 
         # Insert data into the database
         insert_customers(customers_df, cursor)
+        logger.info(f"Inserted {len(customers_df)} records into customer table.")
+        
         insert_products(products_df, cursor)
+        logger.info(f"Inserted {len(products_df)} records into product table.")
+        
         insert_sales(sales_df, cursor)
+        logger.info(f"Inserted {len(sales_df)} records into sale table.")
 
         conn.commit()
     finally:
