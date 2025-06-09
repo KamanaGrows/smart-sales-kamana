@@ -4705,3 +4705,8 @@ dtype: int64
 2025-06-02 22:56:51.560 | INFO     | __main__:load_data_to_db:135 - Inserted 193 records into customer table.
 2025-06-02 22:56:51.570 | INFO     | __main__:load_data_to_db:138 - Inserted 95 records into product table.
 2025-06-02 22:56:51.593 | INFO     | __main__:load_data_to_db:141 - Inserted 1897 records into sale table.
+2025-06-08 23:46:11.850 | INFO     | __main__:load_data_to_db:84 - Connected to SQLite database at data\dw\smart_sales.db
+2025-06-08 23:46:11.863 | INFO     | __main__:load_data_to_db:90 - Schema created and existing records deleted.
+2025-06-08 23:46:11.924 | INFO     | __main__:load_data_to_db:135 - Inserted 193 records into customer table.
+2025-06-08 23:46:11.930 | INFO     | __main__:load_data_to_db:138 - Inserted 95 records into product table.
+2025-06-08 23:46:11.940 | INFO     | __main__:load_data_to_db:141 - Inserted 1897 records into sale table.
