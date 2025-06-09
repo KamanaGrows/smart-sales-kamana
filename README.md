@@ -39,3 +39,78 @@ Sale Table:
 
 ![image](https://github.com/user-attachments/assets/00cc6f5d-cbfe-41a3-8e3f-0c3bad8b415b)
 
+**Module 4:
+**
+
+Data Analysis using Power BI. 
+
+Installations:
+Installed Power BI Desktop.
+Installed SQLite ODBC Driver.
+Configured ODBC Data Source Name SmartSalesDSN
+    Opened ODBC Data Sources (64-bit) from the Start Menu.
+    Clicked the System DSN tab.
+    Clicked Add → selected SQLite3 ODBC Driver → clicked Finish.
+    Gave DSN Name SmartSalesDSN.
+    Clicked Browse and selected database file, smart_sales.db . 
+    Click OK to save.
+
+PowerBI Setup 
+    Clicked Get Data (top left) → Select ODBC from the list.
+    Selected the DSN SmartSalesDSN.
+    Selected the tables you want to analyze:
+        Customer table
+        Product table
+        Sales table
+    Clicked Load to bring the tables into Power BI.
+
+- Utilizing SQL on PowerBI
+
+In the Home tab, clicked Transform Data to open Power Query Editor.
+In Power Query Editor, clicked Advanced Editor (top menu).
+Executed below Query
+
+let 
+source = ODBC.Query("dsn=SMARtSalesDSN",
+    "SELECT c.name, SUM(s.amount) AS total_spent
+    FROM sale s
+    JOIN customer c ON s.customer_id = c.customer_id
+    GROUP BY c.name
+    ORDER BY total_spent DESC;")
+in 
+source
+
+![image](https://github.com/user-attachments/assets/2db0f9c7-82d7-4927-8db6-df8940175e6c)
+
+Result: Table displaying Total Spent for each customer. 
+
+![image](https://github.com/user-attachments/assets/565ecb1d-c7dd-4c3a-81eb-176a382cf30f)
+
+In the Model View, Table connection displaying modified Sales Table. 
+
+![image](https://github.com/user-attachments/assets/0cb9b940-cce4-4bcb-918e-250f6063e110)
+
+Data Slicing
+
+Transformed Data to show customer joining date in the range of Year, Quarter, Month
+
+![image](https://github.com/user-attachments/assets/f1792508-4a47-4ee3-a575-0af9db0e5ac2)
+
+Data Dicing
+
+Transformed Product data to display products based on Category and Condition
+
+![image](https://github.com/user-attachments/assets/4f7ba6f1-71a6-4fd6-ad9d-ad8c02e373c4)
+
+Clustered Chart
+
+Created Chart to display customers' rewards points accumulation based on Year, Quarter, and Month
+
+![image](https://github.com/user-attachments/assets/136d1903-3aad-44a0-a7a4-8fa25147ac72)
+
+Final Visualization dashboard after doing key data transformation activities. 
+
+![image](https://github.com/user-attachments/assets/1c83bc7c-b6dd-427b-9f48-b962c2920ab4)
+
+
+
