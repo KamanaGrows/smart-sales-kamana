@@ -111,5 +111,18 @@ Final Visualization dashboard after doing key data transformation activities.
 
 ![image](https://github.com/user-attachments/assets/1c83bc7c-b6dd-427b-9f48-b962c2920ab4)
 
+**Module 6**:
 
+OLAP Cubing
 
+- Under scripts/OLAP created a olap_cubing file: scripts/olap_cubing.py. 
+- Utilized Sales Data from smart_sales.db to ingest data into olap cubing.
+- Dimensions: PaymentType, Metrics: Total sale amount by payment type, total sales count by payment type.
+- Data from new olap cubing results saved under \data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+
+Analysis through OLAP Cubing
+
+- Under scripts/OLAP created an olap_most_used_paymenttype file: scripts/olap_most_used_paymenttype.py. 
+- Added functions to analyze sales data based on payment type used.
+- Added functions to visualize the sales amount based on payment type used.
+- Added the visualization data to \data\results\sales_by_payment_type.png
