@@ -1,27 +1,3 @@
-"""
-Module 6: OLAP Goal Script (uses cubed results)
-File: scripts/olap_goals_sales_by_weekday.py
-
-This script uses our precomputed cubed data set to get the information 
-we need to answer a specific business goal. 
-
-GOAL: Analyze sales data to determine which day of the week 
-consistently shows the lowest sales revenue. 
-
-ACTION: This can help inform decisions about reducing operating hours 
-or focusing marketing efforts on less profitable days.
-
-PROCESS: 
-Group transactions by the day of the week.
-Sum SaleAmount for each day.
-Identify the day with the lowest total revenue.
-
-This example assumes a cube data set with the following column names (yours will differ).
-DayOfWeek,product_id,customer_id,sale_amount_usd_sum,sale_amount_usd_mean,sale_id_count,sale_ids
-Friday,101,1001,6344.96,6344.96,1,[582]
-etc.
-"""
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import pathlib

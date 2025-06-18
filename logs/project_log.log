@@ -5085,3 +5085,20 @@ dtype: int64
 2025-06-17 23:16:25.001 | INFO     | __main__:main:140 - Close the Figure to complete this script.
 2025-06-17 23:16:25.364 | INFO     | __main__:visualize_sales_by_payment_type:115 - Visualization saved to data\results\sales_by_payment_type.png.
 2025-06-17 23:16:27.714 | INFO     | __main__:main:144 - Analysis and visualization completed successfully.
+2025-06-17 23:53:06.902 | INFO     | __main__:main:124 - Starting OLAP Cubing process...
+2025-06-17 23:53:06.912 | INFO     | __main__:ingest_sales_data_from_dw:28 - Sales data successfully loaded from SQLite data warehouse.
+2025-06-17 23:53:06.922 | INFO     | __main__:create_olap_cube:77 - OLAP cube created with dimensions: ['payment_type']
+2025-06-17 23:53:06.929 | INFO     | __main__:write_cube_to_csv:116 - OLAP cube saved to data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-06-17 23:53:06.929 | INFO     | __main__:main:142 - OLAP Cubing process completed successfully.
+2025-06-17 23:53:06.930 | INFO     | __main__:main:143 - Please see outputs in data\olap_cubing_outputs
+2025-06-17 23:53:14.126 | INFO     | __main__:main:100 - Starting SALES_BY_PAYMENT_TYPE analysis...
+2025-06-17 23:53:14.132 | INFO     | __main__:load_olap_cube:26 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-06-17 23:53:14.135 | INFO     | __main__:analyze_sales_by_paymenttype:42 - Sales aggregated by payment_type successfully.
+2025-06-17 23:53:14.136 | INFO     | __main__:identify_least_used_payment_type:53 - Least used payment type: Cash with revenue $561387.74.
+2025-06-17 23:53:14.136 | INFO     | __main__:main:110 - Least revenue by payment type: Cash
+2025-06-17 23:53:14.136 | INFO     | __main__:main:111 - Close the Figure to complete this script.
+2025-06-17 23:53:14.137 | INFO     | __main__:identify_most_used_payment_type:65 - Most used payment type: CreditCard with revenue $789992.32.
+2025-06-17 23:53:14.138 | INFO     | __main__:main:115 - Most revenue by payment type: CreditCard
+2025-06-17 23:53:14.138 | INFO     | __main__:main:116 - Close the Figure to complete this script.
+2025-06-17 23:53:14.524 | INFO     | __main__:visualize_sales_by_payment_type:91 - Visualization saved to data\results\sales_by_payment_type.png.
+2025-06-17 23:53:17.665 | INFO     | __main__:main:120 - Analysis and visualization completed successfully.
