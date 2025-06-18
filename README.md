@@ -119,10 +119,16 @@ OLAP Cubing
 - Utilized Sales Data from smart_sales.db to ingest data into olap cubing.
 - Dimensions: PaymentType, Metrics: Total sale amount by payment type, total sales count by payment type.
 - Data from new olap cubing results saved under \data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+![image](https://github.com/user-attachments/assets/08fe6a2d-01c2-48d8-9995-d996053611b2)
 
 Analysis through OLAP Cubing
 
 - Under scripts/OLAP created an olap_most_used_paymenttype file: scripts/olap_most_used_paymenttype.py. 
 - Added functions to analyze sales data based on payment type used.
-- Added functions to visualize the sales amount based on payment type used.
-- Added the visualization data to \data\results\sales_by_payment_type.png
+- Added functions to visualize the sales amount based on payment type used.4
+  
+![HighestAndLowestPaymentTypeRevenue](https://github.com/user-attachments/assets/8b95b126-c405-44ef-b559-057262f6cab6)
+
+- Added the visualization result data to \data\results\sales_by_payment_type.png
+
+![Sales_By_PaymentType](https://github.com/user-attachments/assets/f8052de5-df6e-425f-9ca3-33988729cd26)
