@@ -132,3 +132,29 @@ Analysis through OLAP Cubing
 - Added the visualization result data to \data\results\sales_by_payment_type.png
 
 ![Sales_By_PaymentType](https://github.com/user-attachments/assets/f8052de5-df6e-425f-9ca3-33988729cd26)
+
+**Module 7**:
+
+Final Report – Custom BI Project 
+
+Business Goal: 
+Analyze sales of each product category per year and determine the highest performing category for each year.
+
+Process:
+- Created custom_scripts.py file under scripts/custom_scripts folder.
+- Added function to load sales data from sales_prepared.csv file.
+- Added function to slice ProductCategory column data and merge into the sales data file.
+- Added function to aggregate data by ProductCategory and Year (extracted from SaleDate) and save into file under data/custom_outputs as   sales_by_product_category_and_year.csv.
+- Added function to Visualize SalesAmount by ProductCategory and Year, and save the visualized data under folder data custom_project_results as sales_by_product_category_and_year.png.
+- Added function to Visualize the top ProductCategory with the highest sales for each year, and save the visualized data under folder data/custom_project_results as top_category_per_year.png.
+
+Results:
+- Aggregrated Data with ProductCategory, Year, and SaleAmount.
+![image](https://github.com/user-attachments/assets/77f8902b-0e4b-4619-9dc0-702ad1978553)
+
+- Visualization of SalesAmount by ProductCategory and Year.
+![image](https://github.com/user-attachments/assets/18326648-8d1b-4a57-91e4-dd5309cfeb25)
+
+- Visualization of top ProductCategory per Year. 
+![image](https://github.com/user-attachments/assets/15824658-031f-44a7-9178-33eba5a7e910)
+
